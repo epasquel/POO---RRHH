@@ -8,6 +8,16 @@ public class Usuario {
     private String userName;
     private String password;
     private Integer rolID;
+    private boolean enabled;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+    
 
     public Integer getRolID() {
         return rolID;
