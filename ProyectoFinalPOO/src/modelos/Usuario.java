@@ -7,6 +7,15 @@ public class Usuario {
        private String apellido;
     private String userName;
     private String password;
+    private Integer rolID;
+
+    public Integer getRolID() {
+        return rolID;
+    }
+
+    public void setRolID(Integer rolID) {
+        this.rolID = rolID;
+    }
 
     public Usuario(String nombre, String apellido, String userName, String password) {
         this.nombre = nombre;
