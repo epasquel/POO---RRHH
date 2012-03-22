@@ -7,25 +7,6 @@ public class Usuario {
        private String apellido;
     private String userName;
     private String password;
-    private Integer rolID;
-    private boolean enabled;
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-    
-
-    public Integer getRolID() {
-        return rolID;
-    }
-
-    public void setRolID(Integer rolID) {
-        this.rolID = rolID;
-    }
 
     public Usuario(String nombre, String apellido, String userName, String password) {
         this.nombre = nombre;
