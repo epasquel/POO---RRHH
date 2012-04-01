@@ -10,8 +10,45 @@ import java.util.Calendar;
 
 
 public class Documento {
-    private Calendar fechaven;
-    private String responsable;
-    private String comentario;
-    private ArrayList usuario;
+    protected Calendar fechaven;
+    protected String responsable;
+    protected String comentario;
+    protected Usuario usuario;
+
+    public Documento(Calendar fechaven, String responsable, String comentario, Usuario usuario) {
+        this.fechaven = fechaven;
+        this.responsable = responsable;
+        this.comentario = comentario;
+        this.usuario = usuario;
+    }
+
+    public void buscar(String responsable) {
+        // buscar por responsable
+    }
+
+    public void adicionar() {
+        // parece que no es posible tener un metodo en comun porque hay campos distintos
+    }
+    
+    public void editar() {
+        // parece que no es posible tener un metodo en comun porque hay campos distintos
+    }
+
+    public void eliminar(String responsable) {
+        // buscar por responsable y eliminar
+    }
+    
+    public void asignarTarea(Usuario usuario) {
+        
+    }
+
+    public void adicionarUsuarioYNotificar(Usuario usuario) {
+        
+    }
+    
+    public void eliminarUsuarioYNotificar(Usuario usuario) {
+        
+    }
+    
+    
 }
