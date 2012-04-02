@@ -1,44 +1,86 @@
 
 package modelos;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 
-public class DeclaracionJurada {
+public class DeclaracionJurada extends Documento{
+        
+    private String tipo;
+    private Calendar fechaAsumpcion;
+    private Calendar fechaReferencia;
+    private Calendar fechaPublicacion;
+    private Calendar fechaDocumento;
+    private String numDocumento;
+
     
-    public DeclaracionJurada(Responsable responsable, Tipo tipo, String fechaVencimiento){
-            
-        this.responsable = responsable;
+        public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable){
+        super(fechaVen, responsable);
         this.tipo = tipo;
-        this.fechaVencimiento = fechaVencimiento;
+    }
+           
+    public String getComentario(){
+        return comentario;
     }
     
-    private Responsable responsable;
-    private Tipo tipo;
-    private String fechaVencimiento;
-
-    public String getFechaVencimiento() {
-        return fechaVencimiento;
+    public void setComentario(String comentario){
+        this.comentario = comentario;
     }
 
-    public void setFechaVencimiento(String fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
+    public Calendar getFechaAsumpcion() {
+        return fechaAsumpcion;
     }
 
-    public Tipo getTipo() {
+    public void setFechaAsumpcion(Calendar fechaAsumpcion) {
+        this.fechaAsumpcion = fechaAsumpcion;
+    }
+
+    public Calendar getFechaDocumento() {
+        return fechaDocumento;
+    }
+
+    public void setFechaDocumento(Calendar fechaDocumento) {
+        this.fechaDocumento = fechaDocumento;
+    }
+
+    public Calendar getFechaPublicacion() {
+        return fechaPublicacion;
+    }
+
+    public void setFechaPublicacion(Calendar fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
+    public Calendar getFechaReferencia() {
+        return fechaReferencia;
+    }
+
+    public void setFechaReferencia(Calendar fechaReferencia) {
+        this.fechaReferencia = fechaReferencia;
+    }
+
+    public String getNumDocumento() {
+        return numDocumento;
+    }
+
+    public void setNumDocumento(String numDocumento) {
+        this.numDocumento = numDocumento;
+    }
+
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public Responsable getResponsable() {
-        return responsable;
-    }
 
-    public void setResponsable(Responsable responsable) {
-        this.responsable = responsable;
-    }
+    
+    
+
+
+
     
 }

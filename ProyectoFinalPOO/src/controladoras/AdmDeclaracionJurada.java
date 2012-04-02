@@ -4,8 +4,8 @@
  */
 package controladoras;
 
+import java.util.Calendar;
 import modelos.DeclaracionJurada;
-import modelos.*;
 
 /**
  *
@@ -13,17 +13,17 @@ import modelos.*;
  */
 public class AdmDeclaracionJurada {
     
-    public Responsable verificarSiDeclaracionJuradaTieneResponsable(DeclaracionJurada declaracionJurada){
+    public String verificarSiDeclaracionJuradaTieneResponsable(DeclaracionJurada declaracionJurada){
         return declaracionJurada.getResponsable();
     }
     
     
-    public Tipo verificarSiDeclaracionJuradaTieneTipo(DeclaracionJurada declaracionJurada){
+    public String verificarSiDeclaracionJuradaTieneTipo(DeclaracionJurada declaracionJurada){
         return declaracionJurada.getTipo();
     }
     
-    public String verificarSiDeclaracionJuradaTieneFechaDeVencimiento(DeclaracionJurada declaracionJurada){
-        return declaracionJurada.getFechaVencimiento();
+    public Calendar verificarSiDeclaracionJuradaTieneFechaDeVencimiento(DeclaracionJurada declaracionJurada){
+        return declaracionJurada.getFechaven();
     }
     
 }

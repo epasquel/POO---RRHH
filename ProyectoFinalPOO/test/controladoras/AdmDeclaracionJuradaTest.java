@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import modelos.*;
 import controladoras.*;
+import java.util.Calendar;
 
 /**
  *
@@ -23,10 +24,11 @@ public class AdmDeclaracionJuradaTest {
     @Test
     public void siDeclaracionJuradaTieneUnResponsableDevuelveUnMensaje() {
         
-        Responsable responsable = new Responsable("Ebert", "Administrador");
+        String responsable = "Ebert";
         Tipo tipo = new Tipo("Inicio");
-        String fechaVencimiento = "19/01/2012";        
-        DeclaracionJurada declaracionJurada = new DeclaracionJurada(responsable, tipo, fechaVencimiento);
+        Calendar fechaVencimiento = Calendar.getInstance();
+        fechaVencimiento = fechaVencimiento.; // "19/01/2012";        
+        DeclaracionJurada declaracionJurada = new DeclaracionJurada(tipo, fechaVencimiento, responsable);
         
         AdmDeclaracionJurada admDeclaracionJurada = new AdmDeclaracionJurada();
         assertNotNull(admDeclaracionJurada.verificarSiDeclaracionJuradaTieneResponsable(declaracionJurada));
