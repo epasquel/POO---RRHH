@@ -88,7 +88,7 @@ public class AdmUsuario {
         this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "123456");
         this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "123456");
         this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "123456");
-        this.registrarUsuario("44623912", "Miguel", "Escalante", "Z", "mescalante", "mescalante@hotmail.com", "01/04/2012", "MiCargo", "Arquitecto", "123456");
+        this.registrarUsuario("44623912", "Miguel", Angel, "Peñaran", "Escalante", "mescalante@hotmail.com", "01/04/2012", "MiCargo", "Arquitecto", "123456");
     }
     
     public boolean verificarUsuario(String user) {
