@@ -8,8 +8,7 @@ package appinterfaces;
  *
  * @author Administrador
  */
-public interface IDocumento {
-    public String getCodigo(); // no definido o getResponsable();  
+public interface IDocumento { 
     public abstract String buscar();    
     public abstract String adicionar();
     public abstract String editar();

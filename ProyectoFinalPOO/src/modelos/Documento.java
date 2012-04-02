@@ -90,37 +90,8 @@ public class Documento {
         this.usuCreacion = usuCreacion;
     }
 
-
-    
-    
     
     public void buscar(String responsable) {
         // buscar por responsable
     }
-
-    public void adicionar() {
-        // parece que no es posible tener un metodo en comun porque hay campos distintos
-    }
-    
-    public void editar() {
-        // parece que no es posible tener un metodo en comun porque hay campos distintos
-    }
-
-    public void eliminar(String responsable) {
-        // buscar por responsable y eliminar
-    }
-    
-    public void asignarTarea(Usuario usuario) {
-        
-    }
-
-    public void adicionarUsuarioYNotificar(Usuario usuario) {
-        
-    }
-    
-    public void eliminarUsuarioYNotificar(Usuario usuario) {
-        
-    }
-    
-    
 }
