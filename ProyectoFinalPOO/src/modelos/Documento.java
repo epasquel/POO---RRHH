@@ -5,50 +5,35 @@
 
 package modelos;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
-public class Documento {
-    protected Calendar fechaven;
-    protected String responsable;
+public abstract class Documento {
+    protected String responsable; // Esto sera su dni. Para mostrarlo se armara cadena Nombre + Paterno + Materno
     protected String comentario;
-    protected Usuario usuario;
+    protected String fechaven;
+    protected Usuario usuario; // Usuarios que seran notificados.
 
-    public Documento(Calendar fechaven, String responsable, String comentario, Usuario usuario) {
-        this.fechaven = fechaven;
+    public Documento(String responsable, String comentario, String fechaven) {
         this.responsable = responsable;
         this.comentario = comentario;
-        this.usuario = usuario;
+        this.fechaven = fechaven;
     }
 
-    public void buscar(String responsable) {
-        // buscar por responsable
+    public String getComentario() {
+        return comentario;
     }
 
-    public void adicionar() {
-        // parece que no es posible tener un metodo en comun porque hay campos distintos
-    }
-    
-    public void editar() {
-        // parece que no es posible tener un metodo en comun porque hay campos distintos
+    public String getFechaven() {
+        return fechaven;
     }
 
-    public void eliminar(String responsable) {
-        // buscar por responsable y eliminar
-    }
-    
-    public void asignarTarea(Usuario usuario) {
-        
+    public String getResponsable() {
+        return responsable;
     }
 
-    public void adicionarUsuarioYNotificar(Usuario usuario) {
-        
+    public Usuario getUsuario() {
+        return usuario;
     }
-    
-    public void eliminarUsuarioYNotificar(Usuario usuario) {
-        
-    }
-    
     
 }
