@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyectofinalpoo;
 
 import controladoras.AdmRol;
@@ -10,9 +7,6 @@ import controladoras.AdmUsuario;
 
 public class ProyectoFinalPOO {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // Registrar usuarios //
         AdmUsuario AdmUsuario = new AdmUsuario();
