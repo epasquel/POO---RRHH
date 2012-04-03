@@ -1,26 +1,25 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package modelos;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+/*import java.util.Calendar;*/
 
 
 public class Documento {
     
-    protected Calendar fechaven;
+    /*protected Calendar fechaven;*/
+    protected String fechaven;
     protected String responsable;
     protected String comentario;
     protected ArrayList<Usuario> listUsuario;
-    protected Calendar fechaCreacion;
+    /*protected Calendar fechaCreacion;*/
+    protected String fechaCreacion;
     protected String usuCreacion;
     protected String fecActualizacion;
     protected String usuActualizacion;
 
-    public Documento(Calendar fechaven, String responsable) {
+    /*public Documento(Calendar fechaven, String responsable)*/
+    public Documento(String fechaven, String responsable) {
         this.fechaven = fechaven;
         this.responsable = responsable; 
         listUsuario = new ArrayList<Usuario>();
@@ -42,19 +41,23 @@ public class Documento {
         this.fecActualizacion = fecActualizacion;
     }
 
-    public Calendar getFechaCreacion() {
+    /*public Calendar getFechaCreacion()*/
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Calendar fechaCreacion) {
+    /*public void setFechaCreacion(Calendar fechaCreacion)*/
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Calendar getFechaven() {
+    /*public Calendar getFechaven()*/
+    public String getFechaven() {
         return fechaven;
     }
 
-    public void setFechaven(Calendar fechaven) {
+    /*public void setFechaven(Calendar fechaven)*/
+    public void setFechaven(String fechaven) {
         this.fechaven = fechaven;
     }
 

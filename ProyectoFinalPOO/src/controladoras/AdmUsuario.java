@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package controladoras;
 
@@ -25,7 +21,7 @@ public class AdmUsuario {
         return valores.size();
     }
 
-    public void registrarUsuario(String dni, String nombre, String paterno, String materno, String usuario, String correo, String fechaIngreso, String cargo, String nombreRol, String password) {
+    public void registrarUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String nombreRol, String password) {
         int estado = 0;
         for (Usuario Usuario : valores) {
             if (Usuario.getDni().equals(dni)) {
@@ -34,7 +30,7 @@ public class AdmUsuario {
         }
         
         if (estado == 0) {
-            Usuario objDato = new Usuario(dni, nombre, paterno, materno, usuario, correo, fechaIngreso, cargo, nombreRol, password);
+            Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, nombreRol, password);
             valores.add(objDato);
             System.out.println("El Usuario ha sido registrado satisfactoriamente.");
         } else if (estado == 1) {
@@ -58,7 +54,7 @@ public class AdmUsuario {
             if (nombre.equals(condicion)) {
                 System.out.println("[" + nombre + "] Registro buscado.");
                 System.out.println("Nombre: " + valores.get(i).getNombre());
-                System.out.println("Paterno: " + valores.get(i).getPaterno());
+                System.out.println("Paterno: " + valores.get(i).getApellidoPaterno());
                 System.out.println("[" + nombre + "] Registro encontrado.");
             }
         }
@@ -70,8 +66,8 @@ public class AdmUsuario {
         for(int aux=0; aux < cantidadElementos; aux++){
             System.out.println("Dni : " + valores.get(aux).getDni());
             System.out.println("Nombre : " + valores.get(aux).getNombre());
-            System.out.println("Materno : " + valores.get(aux).getPaterno());
-            System.out.println("Paterno : " + valores.get(aux).getMaterno());
+            System.out.println("Materno : " + valores.get(aux).getApellidoPaterno());
+            System.out.println("Paterno : " + valores.get(aux).getApellidoMaterno());
             System.out.println("Rol : " + valores.get(aux).getRol().getNombre());
             // Importante para relacionar Rol y su Descripcion ///////////////
             for (Rol unRol : AdmRol.getArrayRol()) {
@@ -88,7 +84,7 @@ public class AdmUsuario {
         this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "123456");
         this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "123456");
         this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "123456");
-        this.registrarUsuario("44623912", "Miguel", Angel, "Peñaran", "Escalante", "mescalante@hotmail.com", "01/04/2012", "MiCargo", "Arquitecto", "123456");
+        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "mpeñaran", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "Arquitecto", "123456");
     }
     
     public boolean verificarUsuario(String user) {

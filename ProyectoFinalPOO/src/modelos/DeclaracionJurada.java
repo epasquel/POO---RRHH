@@ -2,20 +2,25 @@
 package modelos;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+/*import java.util.Calendar;*/
 
 
 public class DeclaracionJurada extends Documento{
         
     private String tipo;
-    private Calendar fechaAsumpcion;
+    /*private Calendar fechaAsumpcion;
     private Calendar fechaReferencia;
     private Calendar fechaPublicacion;
-    private Calendar fechaDocumento;
+    private Calendar fechaDocumento;*/
+    private String fechaAsumpcion;
+    private String fechaReferencia;
+    private String fechaPublicacion;
+    private String fechaDocumento;
     private String numDocumento;
 
     
-        public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable){
+    /*public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable)*/
+    public DeclaracionJurada(String tipo, String fechaVen, String responsable) {
         super(fechaVen, responsable);
         this.tipo = tipo;
     }
@@ -28,35 +33,43 @@ public class DeclaracionJurada extends Documento{
         this.comentario = comentario;
     }
 
-    public Calendar getFechaAsumpcion() {
+    /*public Calendar getFechaAsumpcion()*/
+    public String getFechaAsumpcion() {
         return fechaAsumpcion;
     }
 
-    public void setFechaAsumpcion(Calendar fechaAsumpcion) {
+    /*public void setFechaAsumpcion(Calendar fechaAsumpcion)*/
+    public void setFechaAsumpcion(String fechaAsumpcion){
         this.fechaAsumpcion = fechaAsumpcion;
     }
 
-    public Calendar getFechaDocumento() {
+    /*public Calendar getFechaDocumento()*/
+    public String getFechaDocumento(){
         return fechaDocumento;
     }
 
-    public void setFechaDocumento(Calendar fechaDocumento) {
+    /*public void setFechaDocumento(Calendar fechaDocumento)*/
+    public void setFechaDocumento(String fechaDocumento) {
         this.fechaDocumento = fechaDocumento;
     }
 
-    public Calendar getFechaPublicacion() {
+    /*public Calendar getFechaPublicacion()*/
+    public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Calendar fechaPublicacion) {
+    /*public void setFechaPublicacion(Calendar fechaPublicacion)*/
+    public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public Calendar getFechaReferencia() {
+    /*public Calendar getFechaReferencia()*/
+    public String getFechaReferencia() {
         return fechaReferencia;
     }
 
-    public void setFechaReferencia(Calendar fechaReferencia) {
+    /*public void setFechaReferencia(Calendar fechaReferencia)*/
+    public void setFechaReferencia(String fechaReferencia) {
         this.fechaReferencia = fechaReferencia;
     }
 
@@ -75,12 +88,4 @@ public class DeclaracionJurada extends Documento{
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
-
-    
-    
-
-
-
-    
 }

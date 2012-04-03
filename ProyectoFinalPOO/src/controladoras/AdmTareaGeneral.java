@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controladoras;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+/*import java.util.Calendar;*/
 import modelos.TareaGeneral;
 import modelos.Usuario;
 
@@ -25,7 +22,8 @@ public class AdmTareaGeneral {
         return valores.size();
     }
 
-    public void registrarTareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven) {
+    /*public void registrarTareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven)*/
+    public void registrarTareaGeneral(String asunto, String responsable, String comentario, String fechaven) {
         int estado = 0;
         int usuario = 0;
         for (TareaGeneral TareaGeneral : valores) {
@@ -86,8 +84,8 @@ public class AdmTareaGeneral {
             for (Usuario unUsuario : AdmUsuario.getArrayUsuario()) {
                 if (unUsuario.getDni().equals(valores.get(aux).getResponsable())) {
                     nombreResponsable = unUsuario.getNombre();
-                    paternoResponsable = unUsuario.getPaterno();
-                    maternoResponsable = unUsuario.getMaterno();
+                    paternoResponsable = unUsuario.getApellidoPaterno();
+                    maternoResponsable = unUsuario.getApellidoMaterno();
                     completoResponsable = nombreResponsable + " " + paternoResponsable + " " + maternoResponsable;
                 }
             }

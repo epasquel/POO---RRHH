@@ -2,7 +2,7 @@
 package modelos;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+/*import java.util.Calendar;*/
 
 
 public class CartaFianza extends Documento{
@@ -16,7 +16,8 @@ public class CartaFianza extends Documento{
     private double importe;
     
     
-    public CartaFianza(Calendar fechaven, String responsable) {
+    /*public CartaFianza(Calendar fechaven, String responsable)*/
+    public CartaFianza(String fechaven, String responsable) {
         super(fechaven, responsable);
     }
 

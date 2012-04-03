@@ -1,7 +1,6 @@
 
 package modelos;
 
-
 public class Responsable {
     
     private String nombre;
