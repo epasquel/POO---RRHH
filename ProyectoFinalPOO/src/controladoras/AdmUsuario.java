@@ -4,6 +4,9 @@ package controladoras;
 import java.util.ArrayList;
 import modelos.Rol;
 import modelos.Usuario;
+import java.text.DateFormat;
+import java.util.Date;
+import java.text.ParseException;
 
 
 public class AdmUsuario {
@@ -132,5 +135,59 @@ public class AdmUsuario {
         }
         return acceso;
     }
+     public boolean validarUsuario(String nombre){
+        if(nombre != null){
+            return true;
+        }
+        return false;
+    }
+        public boolean validarDNI(String dni){
+        if(dni != null){
+            return true;
+        }
+        return false;
+    }
+        public boolean validarApellidoPaterno(String apePat){
+        if (apePat != null){
+            return true;
+        }
+        return false;
+    }
     
+    public boolean validarApellidoMatermo(String apeMat){
+        if (apeMat != null){
+            return true;
+        }
+        return false;
+    }
+    public boolean validarCorreo(String correo){
+        if (correo != null){
+            return true;
+        }
+        return false;
+    }
+       public boolean validarFecha(Date fIngreso){
+        if (fIngreso != null){
+            return true;
+        }
+        return false;
+    }
+         public boolean validarCargo(String cargo){
+        if (cargo != null){
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean validarCodigoRol(String codigoRol){
+        if (codigoRol != null){
+            return true;
+        }
+        return false;
+    }
+     public Date convertirFecha(String fecha) throws ParseException {
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        Date d1 = df.parse(fecha);
+        return d1;
+    }
 }
