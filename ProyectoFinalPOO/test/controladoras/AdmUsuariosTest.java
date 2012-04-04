@@ -1,13 +1,16 @@
 package controladoras;
 
-import controladoras.AdmUsuarios;
+
+import controladoras.AdmUsuario;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
 
 public class AdmUsuariosTest {
     
-    AdmUsuarios admUsuarios = new AdmUsuarios();
+    AdmUsuario admUsuarios = new AdmUsuario();
     
     
     @Test
@@ -54,7 +57,7 @@ public class AdmUsuariosTest {
     
     @Test
     public void siElUsuarioExisteDebeMandarMensaje(){
-        assertNotNull(admUsuarios.existeUsuario("sklante"));
+        assertNotNull(admUsuarios.existeUsuario("mpeñaran"));
         System.out.print("Usuario Existe");
     }
      @Test
@@ -65,15 +68,21 @@ public class AdmUsuariosTest {
        
     @Test
     public void siElPassWordEsValidoDebeDarmeAcceso(){
-        assertTrue(admUsuarios.validarPassword("sklante","123456"));
+        assertTrue(admUsuarios.validarPassword("mpeñaran","123456"));
         System.out.println("Acceso Aceptado");
     }
     
     @Test
         
     public void siElPassWordNoEsValidoNoDebeDarmeAcceso(){
-        assertFalse(admUsuarios.validarPassword("sklante", "123454464"));
+        assertFalse(admUsuarios.validarPassword("mpeñaran", "Arquitecto"));
+            
         System.out.println("Acceso NO Aceptado");
     }
-        
+     @Test
+    public void testear() throws ParseException{
+        System.out.println("probando fecha" + admUsuarios.convertirFecha("21/04/2012"));
+        System.out.println("probando fecha" + admUsuarios.convertirFecha("10/12/2012"));
+        System.out.println("probando fecha" + admUsuarios.convertirFecha("05/01/2012"));
+    }    
 }
