@@ -3,11 +3,12 @@ package controladoras;
 
 /*import java.util.Calendar;*/
 import modelos.DeclaracionJurada;
+import modelos.Responsable;
 
 public class AdmDeclaracionJurada {
     
     public String verificarSiDeclaracionJuradaTieneResponsable(DeclaracionJurada declaracionJurada){
-        return declaracionJurada.getResponsable();
+        return declaracionJurada.getResponsable().getNombre();
     }
     
     
@@ -19,6 +20,13 @@ public class AdmDeclaracionJurada {
         return declaracionJurada.getFechaven();
     }
     
+    public Boolean verificarCamposObligatoriosParaGrabarTarea(DeclaracionJurada declaracionJurada){
+        Boolean succes = false;
+        if ((verificarSiDeclaracionJuradaTieneFechaDeVencimiento(declaracionJurada) != "") & (verificarSiDeclaracionJuradaTieneResponsable(declaracionJurada) != "") & (verificarSiDeclaracionJuradaTieneTipo(declaracionJurada) != "")){
+            succes = true;
+        }
+        return succes;
+    }
     /*public Calendar verificarSiDeclaracionJuradaTieneFechaDeVencimiento(DeclaracionJurada declaracionJurada){
         return declaracionJurada.getFechaven();
     }*/

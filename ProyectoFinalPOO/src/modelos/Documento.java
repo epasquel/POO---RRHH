@@ -9,7 +9,7 @@ public class Documento {
     
     /*protected Calendar fechaven;*/
     protected String fechaven;
-    protected String responsable;
+    protected Responsable responsable;
     protected String comentario;
     protected ArrayList<Usuario> listUsuario;
     /*protected Calendar fechaCreacion;*/
@@ -19,7 +19,7 @@ public class Documento {
     protected String usuActualizacion;
 
     /*public Documento(Calendar fechaven, String responsable)*/
-    public Documento(String fechaven, String responsable) {
+    public Documento(String fechaven, Responsable responsable) {
         this.fechaven = fechaven;
         this.responsable = responsable; 
         listUsuario = new ArrayList<Usuario>();
@@ -69,11 +69,11 @@ public class Documento {
         this.listUsuario = listUsuario;
     }
 
-    public String getResponsable() {
+    public Responsable getResponsable() {
         return responsable;
     }
 
-    public void setResponsable(String responsable) {
+    public void setResponsable(Responsable responsable) {
         this.responsable = responsable;
     }
 

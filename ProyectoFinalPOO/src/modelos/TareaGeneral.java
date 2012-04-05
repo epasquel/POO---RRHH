@@ -8,7 +8,7 @@ public class TareaGeneral extends Documento {
     private String asunto;
 
     /*public TareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven)*/
-    public TareaGeneral(String asunto, String responsable, String comentario, String fechaven) {
+    public TareaGeneral(String asunto, Responsable responsable, String comentario, String fechaven) {
         super(fechaven, responsable);
         this.asunto = asunto;
     }

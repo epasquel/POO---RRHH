@@ -20,7 +20,7 @@ public class DeclaracionJurada extends Documento{
 
     
     /*public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable)*/
-    public DeclaracionJurada(String tipo, String fechaVen, String responsable) {
+    public DeclaracionJurada(String tipo, String fechaVen, Responsable responsable) {
         super(fechaVen, responsable);
         this.tipo = tipo;
     }

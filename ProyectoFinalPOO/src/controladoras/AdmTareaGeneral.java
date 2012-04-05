@@ -2,6 +2,7 @@
 package controladoras;
 
 import java.util.ArrayList;
+import modelos.Responsable;
 /*import java.util.Calendar;*/
 import modelos.TareaGeneral;
 import modelos.Usuario;
@@ -23,7 +24,7 @@ public class AdmTareaGeneral {
     }
 
     /*public void registrarTareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven)*/
-    public void registrarTareaGeneral(String asunto, String responsable, String comentario, String fechaven) {
+    public void registrarTareaGeneral(String asunto, Responsable responsable, String comentario, String fechaven) {
         int estado = 0;
         int usuario = 0;
         for (TareaGeneral TareaGeneral : valores) {
@@ -94,10 +95,14 @@ public class AdmTareaGeneral {
         }
     }
     private void simularTabla() {
-        this.registrarTareaGeneral("Limpieza", "44623909", "Limpieza en el segmento A", "13/04/2012");
-        this.registrarTareaGeneral("Supervisor", "44623910", "Supervision de calles", "26/04/2012");
-        this.registrarTareaGeneral("Dictar clases", "44623911", "Atencion en el aula 302", "30/04/2012");
-        this.registrarTareaGeneral("Tutoria", "44623912", "Aseoria para alumnos de pregrado", "10/05/2012");
+        Responsable responsable1 = new Responsable("Javier", "Conserje");
+        Responsable responsable2 = new Responsable("Javier", "Supervisor");
+        Responsable responsable3 = new Responsable("Javier", "Supervisor");
+        Responsable responsable4 = new Responsable("Javier", "Asesor");
+        this.registrarTareaGeneral("Limpieza", responsable1, "Limpieza en el segmento A", "13/04/2012");
+        this.registrarTareaGeneral("Supervisor", responsable2, "Supervision de calles", "26/04/2012");
+        this.registrarTareaGeneral("Dictar clases", responsable3, "Atencion en el aula 302", "30/04/2012");
+        this.registrarTareaGeneral("Tutoria", responsable4, "Aseoria para alumnos de pregrado", "10/05/2012");
     }
     
     public boolean verificarAsunto(String asunto) {

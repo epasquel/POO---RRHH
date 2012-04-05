@@ -17,7 +17,7 @@ public class CartaFianza extends Documento{
     
     
     /*public CartaFianza(Calendar fechaven, String responsable)*/
-    public CartaFianza(String fechaven, String responsable) {
+    public CartaFianza(String fechaven, Responsable responsable) {
         super(fechaven, responsable);
     }
 

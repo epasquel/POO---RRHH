@@ -4,6 +4,7 @@ package proyectofinalpoo;
 import controladoras.AdmRol;
 import controladoras.AdmTareaGeneral;
 import controladoras.AdmUsuario;
+import modelos.Responsable;
 
 public class ProyectoFinalPOO {
 
@@ -60,11 +61,16 @@ public class ProyectoFinalPOO {
         System.out.println("");
 
         // Registrar tareas //
+        Responsable responsable1 = new Responsable("Javier", "Conserje");
+        Responsable responsable2 = new Responsable("Javier", "Supervisor");
+        Responsable responsable3 = new Responsable("Javier", "Supervisor");
+        Responsable responsable4 = new Responsable("Javier", "Asesor");
+                
         AdmTareaGeneral AdmTareaGeneral = new AdmTareaGeneral();
-        AdmTareaGeneral.registrarTareaGeneral("Limpieza", "44623909", "Limpieza en el segmento A", "13/04/2012");
-        AdmTareaGeneral.registrarTareaGeneral("Supervisor", "44623910", "Supervision de calles", "26/04/2012");
-        AdmTareaGeneral.registrarTareaGeneral("Dictar clases", "44623911", "Atencion en el aula 302", "30/04/2012");
-        AdmTareaGeneral.registrarTareaGeneral("Tutoria", "44623912", "Aseoria para alumnos de pregrado", "10/05/2012");
+        AdmTareaGeneral.registrarTareaGeneral("Limpieza", responsable1, "Limpieza en el segmento A", "13/04/2012");
+        AdmTareaGeneral.registrarTareaGeneral("Supervisor", responsable2, "Supervision de calles", "26/04/2012");
+        AdmTareaGeneral.registrarTareaGeneral("Dictar clases", responsable3, "Atencion en el aula 302", "30/04/2012");
+        AdmTareaGeneral.registrarTareaGeneral("Tutoria", responsable4, "Aseoria para alumnos de pregrado", "10/05/2012");
         // Imprimir lista de tareas //
         System.out.println("========= Lista de tareas =========");
         AdmTareaGeneral.listarTareasGenerales();

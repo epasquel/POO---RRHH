@@ -18,15 +18,23 @@ public class AdmDeclaracionJuradaTest {
     public AdmDeclaracionJuradaTest() {
     }
 
+    private DeclaracionJurada generarData(){
+        
+        Responsable responsable = new Responsable("Ebert", "Administrador");
+        String tipo = "Inicio";
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+        DeclaracionJurada objDec = new DeclaracionJurada(tipo, fechaVencimiento, responsable);
+        return objDec;
+    }
+    
     @Test
     public void siDeclaracionJuradaTieneUnResponsableDevuelveUnMensaje() {
-        
-        String responsable = "Ebert";
-        Tipo tipo = new Tipo("Inicio");
-        Calendar fechaVencimiento = Calendar.getInstance();
-        fechaVencimiento = fechaVencimiento.; // "19/01/2012";        
-        DeclaracionJurada declaracionJurada = new DeclaracionJurada(tipo, fechaVencimiento, responsable);
-        
+                
+        DeclaracionJurada declaracionJurada = generarData();        
         AdmDeclaracionJurada admDeclaracionJurada = new AdmDeclaracionJurada();
         assertNotNull(admDeclaracionJurada.verificarSiDeclaracionJuradaTieneResponsable(declaracionJurada));
         System.out.println("La Declaración Jurada tiene un responsable");
@@ -34,25 +42,32 @@ public class AdmDeclaracionJuradaTest {
     
     @Test
     public void siDeclaracionJuradaTieneUnTipoDevuelveUnMensaje() {        
-        Responsable responsable = new Responsable("Ebert", "Administrador");
-        Tipo tipo = new Tipo("Inicio");
-        String fechaVencimiento = "19/01/2012";        
-        DeclaracionJurada declaracionJurada = new DeclaracionJurada(responsable, tipo, fechaVencimiento);
-        
+       
+        DeclaracionJurada declaracionJurada = generarData();      
         AdmDeclaracionJurada admDeclaracionJurada = new AdmDeclaracionJurada();
         assertNotNull(admDeclaracionJurada.verificarSiDeclaracionJuradaTieneTipo(declaracionJurada));
         System.out.println("La Declaración Jurada tiene un tipo");
     }
     
     @Test
-    public void siDeclaracionJuradaTieneFechaDeVencimientoDevuelveMensaje(){
-        Responsable responsable = new Responsable("Ebert", "Administrador");
-        Tipo tipo = new Tipo("Inicio");
-        String fechaVencimiento = "19/01/2012";        
-        DeclaracionJurada declaracionJurada = new DeclaracionJurada(responsable, tipo, fechaVencimiento);
+    public void siDeclaracionJuradaTieneFechaDeVencimientoDevuelveMensaje(){        
+        DeclaracionJurada declaracionJurada = generarData();
         AdmDeclaracionJurada admDeclaracionJurada = new AdmDeclaracionJurada();
         assertNotNull(admDeclaracionJurada.verificarSiDeclaracionJuradaTieneFechaDeVencimiento(declaracionJurada));
         System.out.println("La Declaración Jurada tiene fecha de vencimiento");
     }
     
+    @Test
+    public void siCamposObligatoriosParaGrabarTareaEstanIngresadosPuedoGrabar(){
+        DeclaracionJurada declaracionJurada = generarData();        
+        AdmDeclaracionJurada admDeclaracionJurada = new AdmDeclaracionJurada();
+        assertTrue(admDeclaracionJurada.verificarCamposObligatoriosParaGrabarTarea(declaracionJurada));
+        System.out.println("Puede grabar la tarea");
+    }
+    
+    @Test
+    public void siCamposObligatoriosParaAsignarTareaEstanIngresadosPuedoGrabar(){
+    
+        
+    }
 }
