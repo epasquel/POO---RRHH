@@ -17,6 +17,15 @@ public class DeclaracionJurada extends Documento{
     private String fechaPublicacion;
     private String fechaDocumento;
     private String numDocumento;
+     private String fechaVencimiento;
+
+    public String getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(String fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
 
     
     /*public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable)*/
