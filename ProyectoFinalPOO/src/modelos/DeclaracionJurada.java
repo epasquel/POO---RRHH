@@ -18,7 +18,15 @@ public class DeclaracionJurada extends Documento{
     private String fechaDocumento;
     private String numDocumento;
      private String fechaVencimiento;
+private String descripcion;
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
     public String getFechaVencimiento() {
         return fechaVencimiento;
     }
