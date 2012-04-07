@@ -33,11 +33,10 @@ public class AdmUsuario {
         }
         
         if (estado == 0) {
-            Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, nombreRol, password);
+            Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo,password ,nombreRol  );
             valores.add(objDato);
-            System.out.println("El Usuario ha sido registrado satisfactoriamente.");
-        } else if (estado == 1) {
-            System.out.println("El Usuario ingresado ya existe, por favor verifique.");
+                    } else if (estado == 1) {
+
         }
     }
     
@@ -84,10 +83,21 @@ public class AdmUsuario {
     }
     
     public void simularTabla(){
-        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "123456");
-        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "123456");
-        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "123456");
-        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "mpeñaran", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "Arquitecto", "123456");
+         /*  private String dni;
+    private String nombre;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
+    private String usuario;
+    private String correo;
+    private String fechaIngreso;
+    private String cargo;
+    private Rol rol;
+    private String password;
+    private String descripcionRol;*/
+        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "Administrador");
+        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "Supervisor");
+        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "Contador");
+        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "123456", "Arquitecto");
     }
     
     public boolean verificarUsuario(String user) {

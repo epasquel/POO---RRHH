@@ -21,68 +21,58 @@ public class AdmUsuariosTest {
     
       @Test
     public void siNoIngresoElPassMeDebeDarError(){
-        assertFalse(admUsuarios.verificarUsuario(null));
+        assertFalse(admUsuarios.verificarPassw(null));
         System.out.println("Password no debe estar vacío");
     }  
          
       
-            
     @Test
     public void siIngresoElUsuarioDebeAceptarlo(){
         assertTrue(admUsuarios.verificarUsuario("sklante"));
         System.out.println("Usuario ingresado");
     }
-    /*Verificar que Password no es null*/
-    
-    
-    
-     @Test
+         @Test
     public void siIngresoElPasswDebeAceptarlo(){
         assertTrue(admUsuarios.verificarPassw("123456"));
         System.out.println("Password ingresado");
     }          
-    
+            
     @Test
     public void siElUsuarioNoExisteDebeMandarMensaje(){
-        assertNull(admUsuarios.existeUsuario("adriem"));
+        assertNull(admUsuarios.existeUsuario("angel"));
         System.out.println("Usuario Inexistente");
     }
-        
+
          @Test
         public void siElPassNoExisteDebeMandarMensaje(){
-            assertNull(admUsuarios.existePassw("1234567"));
-            System.out.println("Password Inexistente");
+            assertNull(admUsuarios.existePassw("123457"));
+            System.out.println("Error al ingresar el password");
     }
        
-    
     @Test
     public void siElUsuarioExisteDebeMandarMensaje(){
-        assertNotNull(admUsuarios.existeUsuario("mpeñaran"));
-        System.out.print("Usuario Existe");
-    }
-     @Test
-     public void siElPasswExisteDebeMandarMensaje(){
-        assertNotNull(admUsuarios.existePassw("123456"));
-        System.out.print("Password Existe");
-    } 
-       
-    @Test
-    public void siElPassWordEsValidoDebeDarmeAcceso(){
-        assertTrue(admUsuarios.validarPassword("mpeñaran","123456"));
-        System.out.println("Acceso Aceptado");
+        assertNotNull(admUsuarios.existeUsuario("sklante"));
+        System.out.print("usario existente");
     }
     
+    @Test
+    public void siElPassWordEsValidoDebeDarmeAcceso(){
+        assertTrue(admUsuarios.validarPassword("sklante","123456"));
+        System.out.println("usted a ingresado correctamente");
+    }
+    
+       
     @Test
         
     public void siElPassWordNoEsValidoNoDebeDarmeAcceso(){
-        assertFalse(admUsuarios.validarPassword("mpeñaran", "Arquitecto"));
+        assertFalse(admUsuarios.validarPassword("sklante", "1234596"));
             
-        System.out.println("Acceso NO Aceptado");
+        System.out.println("El password ingresado es incorrecto, por favor ingresar nuevamente el password");
     }
-     @Test
-    public void testear() throws ParseException{
-        System.out.println("probando fecha" + admUsuarios.convertirFecha("21/04/2012"));
-        System.out.println("probando fecha" + admUsuarios.convertirFecha("10/12/2012"));
-        System.out.println("probando fecha" + admUsuarios.convertirFecha("05/01/2012"));
-    }    
+
+
+
 }
+   
+    
+    
