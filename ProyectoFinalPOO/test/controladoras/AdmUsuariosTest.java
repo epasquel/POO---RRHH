@@ -68,10 +68,19 @@ public class AdmUsuariosTest {
         assertFalse(admUsuarios.validarPassword("sklante", "1234596"));
             
         System.out.println("El password ingresado es incorrecto, por favor ingresar nuevamente el password");
+
+
     }
+     @Test
+        
+    public void eliminarUsuario(){
+     admUsuarios.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "123456", "Arquitecto");
+           assertEquals(4 ,admUsuarios.getValores().size()); 
+        System.out.println("El usuario ha sido eliminado");
 
-
-
+ 
+   
+}
 }
    
     

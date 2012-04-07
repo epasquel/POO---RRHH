@@ -7,7 +7,7 @@ import modelos.Usuario;
 import java.text.DateFormat;
 import java.util.Date;
 import java.text.ParseException;
-
+import controladoras.AdmUsuario;
 
 public class AdmUsuario {
     private static ArrayList<Usuario> valores = new ArrayList<Usuario>();
@@ -35,12 +35,26 @@ public class AdmUsuario {
         if (estado == 0) {
             Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo,password ,nombreRol  );
             valores.add(objDato);
-                    } else if (estado == 1) {
-
+            
+        } else if (estado == 1) {
+           
         }
     }
+     public void eliminarrUsuario(String dni) {
+        int estado = 0;
+        for (Usuario Usuario : valores) {
+            if (Usuario.getDni().equals(dni)) {
+                estado = 1;
+            }
+        }
+        
+        if (estado == 0) {
+                    valores.remove(estado);            
+        } 
+     
+        }
     
-    public void eliminarUsuario(String nombre) {
+   /* public void eliminarUsuario(String nombre) {
         for (int i = 0; i < this.valores.size(); i++) {
             String condicion = valores.get(i).getDni();
             if (nombre.equals(condicion)) {
@@ -48,7 +62,7 @@ public class AdmUsuario {
                 System.out.println("[" + nombre + "] Registro eliminado.");
             }
         }
-    }
+    }*/
 
     public void buscarUsuario(String nombre) {
         for (int i = 0; i < this.valores.size(); i++) {
@@ -200,4 +214,9 @@ public class AdmUsuario {
         Date d1 = df.parse(fecha);
         return d1;
     }
+     void eliminarUsuario(String dni){
+       AdmUsuario.valores.remove(dni);       
+     }
 }
+
+
