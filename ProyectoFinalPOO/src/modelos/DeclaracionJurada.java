@@ -40,12 +40,14 @@ private String descripcion;
     public DeclaracionJurada(String tipo, String fechaVen, Responsable responsable) {
         super(fechaVen, responsable);
         this.tipo = tipo;
-    }
-           
+    }    
+       
+//    @Override
     public String getComentario(){
         return comentario;
     }
     
+//    @Override
     public void setComentario(String comentario){
         this.comentario = comentario;
     }
@@ -105,4 +107,6 @@ private String descripcion;
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    
+    
 }

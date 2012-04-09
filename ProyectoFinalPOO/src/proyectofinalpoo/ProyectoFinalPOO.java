@@ -29,7 +29,7 @@ public class ProyectoFinalPOO {
         // Eliminar usuario //
         System.out.println("========= Eliminar usuarios =========");
         String dni_eliminar = "44623909";
-        AdmUsuario.eliminarUsuario(dni_eliminar);
+        AdmUsuario.eliminarrUsuario(dni_eliminar);
         System.out.println("");
         // Buscar usuario //
         System.out.println("========= Buscar usuarios =========");
