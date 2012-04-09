@@ -29,12 +29,12 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblAdmUsuario = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblInfo = new javax.swing.JLabel();
         lblDni = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblApPaterno = new javax.swing.JLabel();
@@ -56,7 +56,7 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
         txtCargo = new javax.swing.JTextField();
         txtContrasenha = new javax.swing.JPasswordField();
         txtCContrasenha = new javax.swing.JPasswordField();
-        jButton5 = new javax.swing.JButton();
+        btnValidar = new javax.swing.JButton();
         cbxRol = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,23 +83,23 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
                 .addComponent(lblAdmUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Buscar");
+        btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Adicionar");
+        btnAdicionar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdicionar.setText("Adicionar");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setText("Editar");
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEditar.setText("Editar");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Eliminar");
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Información General");
+        lblInfo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblInfo.setForeground(new java.awt.Color(255, 255, 255));
+        lblInfo.setText("Información General");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,14 +107,14 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblInfo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         lblDni.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -156,8 +156,8 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton5.setText("Validar");
+        btnValidar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnValidar.setText("Validar");
 
         cbxRol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -172,13 +172,13 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnAdicionar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addComponent(btnEliminar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -211,7 +211,7 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
                             .addComponent(txtCContrasenha, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbxRol, 0, 146, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5)))
+                        .addComponent(btnValidar)))
                 .addContainerGap(222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -222,10 +222,10 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnBuscar)
+                    .addComponent(btnAdicionar)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -248,7 +248,7 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                    .addComponent(btnValidar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCorreo)
@@ -325,13 +325,12 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnValidar;
     private javax.swing.JComboBox cbxRol;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -344,6 +343,7 @@ public class AdmUsuarioForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblFIngreso;
+    private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblRol;
     private javax.swing.JLabel lblUsuario;
