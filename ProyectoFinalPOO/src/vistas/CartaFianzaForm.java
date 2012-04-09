@@ -26,17 +26,273 @@ public class CartaFianzaForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblCartaFianza = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnBuscar = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnAsignarTarea = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblInfo = new javax.swing.JLabel();
+        lblNroCartaFianza = new javax.swing.JLabel();
+        lblNroContrato = new javax.swing.JLabel();
+        lblBancoEmisor = new javax.swing.JLabel();
+        lblTipo = new javax.swing.JLabel();
+        lblProveedor = new javax.swing.JLabel();
+        lblNroProcesoDeSeleccion = new javax.swing.JLabel();
+        lblImporte = new javax.swing.JLabel();
+        lblFecVencimiento = new javax.swing.JLabel();
+        lblResponsable = new javax.swing.JLabel();
+        lblComentario = new javax.swing.JLabel();
+        txtNroCartaFianza = new javax.swing.JTextField();
+        txtNroContrato = new javax.swing.JTextField();
+        txtBancoEmisor = new javax.swing.JTextField();
+        txtProveedor = new javax.swing.JTextField();
+        txtNroProcesoDeSeleccion = new javax.swing.JTextField();
+        cbxTipo = new javax.swing.JComboBox();
+        txtImporte = new javax.swing.JTextField();
+        txtFecVencimiento = new javax.swing.JTextField();
+        txtResponsable = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtComentario = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        btnAdicionarUsuario = new javax.swing.JButton();
+        btnEliminarUsuario = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        lblCartaFianza.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblCartaFianza.setForeground(new java.awt.Color(255, 255, 255));
+        lblCartaFianza.setText("Control de Cartas Fianza");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCartaFianza)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblCartaFianza, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        btnBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
+
+        btnAdicionar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdicionar.setText("Adicionar");
+
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEditar.setText("Editar");
+
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
+
+        btnAsignarTarea.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAsignarTarea.setText("Asignar Tarea");
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        lblInfo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblInfo.setForeground(new java.awt.Color(255, 255, 255));
+        lblInfo.setText("Información General");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblInfo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+        );
+
+        lblNroCartaFianza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNroCartaFianza.setText("# Carta Fianza");
+
+        lblNroContrato.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNroContrato.setText("# Contrato");
+
+        lblBancoEmisor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblBancoEmisor.setText("Banco Emisor");
+
+        lblTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTipo.setText("Tipo");
+
+        lblProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblProveedor.setText("Proveedor");
+
+        lblNroProcesoDeSeleccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblNroProcesoDeSeleccion.setText("# Proceso de Selección");
+
+        lblImporte.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblImporte.setText("Importe");
+
+        lblFecVencimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblFecVencimiento.setText("Fecha Vencimiento");
+
+        lblResponsable.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblResponsable.setText("Responsable");
+
+        lblComentario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblComentario.setText("Comentario");
+
+        cbxTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        txtComentario.setColumns(20);
+        txtComentario.setRows(5);
+        jScrollPane1.setViewportView(txtComentario);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Notificar a los Siguientes Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        btnAdicionarUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAdicionarUsuario.setText("Adicionar");
+
+        btnEliminarUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminarUsuario.setText("Eliminar");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAdicionarUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEliminarUsuario)
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionarUsuario)
+                    .addComponent(btnEliminarUsuario))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdicionar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAsignarTarea))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNroCartaFianza)
+                                .addComponent(lblNroContrato)
+                                .addComponent(lblBancoEmisor)
+                                .addComponent(lblTipo)
+                                .addComponent(lblProveedor)
+                                .addComponent(lblNroProcesoDeSeleccion)
+                                .addComponent(lblImporte)
+                                .addComponent(lblFecVencimiento)
+                                .addComponent(lblResponsable)
+                                .addComponent(lblComentario))
+                            .addGap(25, 25, 25)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtResponsable, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtFecVencimiento, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtImporte, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNroProcesoDeSeleccion, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtProveedor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbxTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, 130, Short.MAX_VALUE)
+                                    .addComponent(txtBancoEmisor, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNroCartaFianza, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNroContrato, javax.swing.GroupLayout.Alignment.LEADING))))))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(btnAdicionar)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnAsignarTarea))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNroCartaFianza)
+                    .addComponent(txtNroCartaFianza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNroContrato)
+                    .addComponent(txtNroContrato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBancoEmisor)
+                    .addComponent(txtBancoEmisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipo)
+                    .addComponent(cbxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProveedor)
+                    .addComponent(txtProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNroProcesoDeSeleccion)
+                    .addComponent(txtNroProcesoDeSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblImporte)
+                    .addComponent(txtImporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblFecVencimiento)
+                    .addComponent(txtFecVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResponsable)
+                    .addComponent(txtResponsable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(lblComentario)))
+                .addGap(29, 29, 29)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 7, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,5 +340,39 @@ public class CartaFianzaForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnAdicionarUsuario;
+    private javax.swing.JButton btnAsignarTarea;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarUsuario;
+    private javax.swing.JComboBox cbxTipo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblBancoEmisor;
+    private javax.swing.JLabel lblCartaFianza;
+    private javax.swing.JLabel lblComentario;
+    private javax.swing.JLabel lblFecVencimiento;
+    private javax.swing.JLabel lblImporte;
+    private javax.swing.JLabel lblInfo;
+    private javax.swing.JLabel lblNroCartaFianza;
+    private javax.swing.JLabel lblNroContrato;
+    private javax.swing.JLabel lblNroProcesoDeSeleccion;
+    private javax.swing.JLabel lblProveedor;
+    private javax.swing.JLabel lblResponsable;
+    private javax.swing.JLabel lblTipo;
+    private javax.swing.JTextField txtBancoEmisor;
+    private javax.swing.JTextArea txtComentario;
+    private javax.swing.JTextField txtFecVencimiento;
+    private javax.swing.JTextField txtImporte;
+    private javax.swing.JTextField txtNroCartaFianza;
+    private javax.swing.JTextField txtNroContrato;
+    private javax.swing.JTextField txtNroProcesoDeSeleccion;
+    private javax.swing.JTextField txtProveedor;
+    private javax.swing.JTextField txtResponsable;
     // End of variables declaration//GEN-END:variables
 }

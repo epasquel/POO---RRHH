@@ -56,8 +56,8 @@ public class DeclaracionJuradaForm extends javax.swing.JFrame {
         txtFecDocumento = new javax.swing.JTextField();
         txtNroDocumento = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        btnAdicionar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnAdicionarUsuario = new javax.swing.JButton();
+        btnEliminarUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,11 +151,11 @@ public class DeclaracionJuradaForm extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Notificar a los Siguientes Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        btnAdicionar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAdicionar.setText("Adicionar");
+        btnAdicionarUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAdicionarUsuario.setText("Adicionar");
 
-        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnEliminar.setText("Eliminar");
+        btnEliminarUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminarUsuario.setText("Eliminar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -163,9 +163,9 @@ public class DeclaracionJuradaForm extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(btnAdicionar)
+                .addComponent(btnAdicionarUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEliminar)
+                .addComponent(btnEliminarUsuario)
                 .addContainerGap(336, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -173,8 +173,8 @@ public class DeclaracionJuradaForm extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdicionar)
-                    .addComponent(btnEliminar))
+                    .addComponent(btnAdicionarUsuario)
+                    .addComponent(btnEliminarUsuario))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -334,9 +334,9 @@ public class DeclaracionJuradaForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnAdicionarUsuario;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarUsuario;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox cbxTipo;
     private javax.swing.JCheckBox jCheckBox1;
