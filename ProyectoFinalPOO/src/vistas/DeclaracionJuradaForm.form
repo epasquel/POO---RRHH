@@ -27,7 +27,7 @@
           <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -53,7 +53,6 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="txtPublicacion" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" min="-2" pref="235" max="-2" attributes="0"/>
                           <Component id="txtResponsable" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="txtFecVencimiento" alignment="1" max="32767" attributes="0"/>
@@ -66,11 +65,12 @@
                               <Component id="txtNroDocumento" min="-2" pref="118" max="-2" attributes="0"/>
                               <Component id="txtFecDocumento" min="-2" pref="119" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="138" max="32767" attributes="0"/>
+              <EmptySpace pref="223" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -407,7 +407,7 @@
                   <Component id="btnAdicionarUsuario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnEliminarUsuario" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="352" max="32767" attributes="0"/>
+                  <EmptySpace pref="267" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -418,7 +418,7 @@
                       <Component id="btnEliminarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAdicionarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

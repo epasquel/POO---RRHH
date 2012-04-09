@@ -28,7 +28,6 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -40,20 +39,23 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnAsignarTarea" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblAsunto" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblFecVencimiento" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblComentario" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="262" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtFecVencimiento" max="32767" attributes="0"/>
-                              <Component id="txtAsunto" max="32767" attributes="0"/>
-                              <Component id="txtResponsable" pref="138" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblAsunto" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFecVencimiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblComentario" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="304" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtAsunto" alignment="0" pref="146" max="32767" attributes="0"/>
+                                  <Component id="txtFecVencimiento" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtResponsable" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -105,7 +107,7 @@
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="13" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -308,7 +310,7 @@
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="287" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -319,7 +321,7 @@
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="131" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

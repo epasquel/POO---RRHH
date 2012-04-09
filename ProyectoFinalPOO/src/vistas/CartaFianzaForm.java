@@ -171,7 +171,7 @@ public class CartaFianzaForm extends javax.swing.JFrame {
                 .addComponent(btnAdicionarUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminarUsuario)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +179,7 @@ public class CartaFianzaForm extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdicionarUsuario)
                     .addComponent(btnEliminarUsuario))
-                .addGap(0, 136, Short.MAX_VALUE))
+                .addGap(0, 96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,9 +202,9 @@ public class CartaFianzaForm extends javax.swing.JFrame {
                         .addComponent(btnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAsignarTarea))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblNroCartaFianza)
                                 .addComponent(lblNroContrato)
@@ -229,7 +229,7 @@ public class CartaFianzaForm extends javax.swing.JFrame {
                                     .addComponent(txtBancoEmisor, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNroCartaFianza, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNroContrato, javax.swing.GroupLayout.Alignment.LEADING))))))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +291,7 @@ public class CartaFianzaForm extends javax.swing.JFrame {
                         .addComponent(lblComentario)))
                 .addGap(29, 29, 29)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pack();
