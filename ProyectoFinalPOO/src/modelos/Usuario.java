@@ -16,7 +16,7 @@ public class Usuario {
     private String password;
     private String descripcionRol;
 
-    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String nombreRol, String password) {
+    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, Rol rol, String password) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -25,7 +25,7 @@ public class Usuario {
         this.correo = correo;
         this.fechaIngreso = fechaIngreso;
         this.cargo = cargo;
-        this.rol = new Rol(nombreRol, descripcionRol);
+        this.rol = rol;
         this.password = password;
     }
 

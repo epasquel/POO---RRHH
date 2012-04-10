@@ -2,6 +2,26 @@
 package controladoras;
 
 import java.util.ArrayList;
+import modelos.Permisos;
+import modelos.Rol;
+
+public class AdmRol {
+    
+    ArrayList<Rol> listRoles;
+    
+    private void simularTablaRoles()        
+    {
+        listRoles = new ArrayList<Rol>();
+        Permisos permisos = new Permisos(true, false, true, true);
+        Rol rol = new Rol(permisos);
+        listRoles.add(rol);
+        
+    }
+    
+}
+
+
+/*import java.util.ArrayList;
 import modelos.Rol;
 
 
@@ -68,4 +88,4 @@ public class AdmRol {
         }
     }
     
-}
+}*/

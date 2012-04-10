@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.text.ParseException;
 import controladoras.AdmUsuario;
+import modelos.Permisos;
 
 public class AdmUsuario {
     private static ArrayList<Usuario> valores = new ArrayList<Usuario>();
@@ -24,7 +25,7 @@ public class AdmUsuario {
         return valores.size();
     }
 
-    public void registrarUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String nombreRol, String password) {
+    public void registrarUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, Rol rol, String password) {
         int estado = 0;
         for (Usuario Usuario : valores) {
             if (Usuario.getDni().equals(dni)) {
@@ -33,7 +34,7 @@ public class AdmUsuario {
         }
         
         if (estado == 0) {
-            Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo,password ,nombreRol  );
+            Usuario objDato = new Usuario(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, password);
             valores.add(objDato);
             
         } else if (estado == 1) {
@@ -84,13 +85,13 @@ public class AdmUsuario {
             System.out.println("Nombre : " + valores.get(aux).getNombre());
             System.out.println("Materno : " + valores.get(aux).getApellidoPaterno());
             System.out.println("Paterno : " + valores.get(aux).getApellidoMaterno());
-            System.out.println("Rol : " + valores.get(aux).getRol().getNombre());
+            System.out.println("Rol : " + valores.get(aux).getRol());
             // Importante para relacionar Rol y su Descripcion ///////////////
-            for (Rol unRol : AdmRol.getArrayRol()) {
+            /*for (Rol unRol : AdmRol.getArrayRol()) {
                 if (unRol.getNombre().equals(valores.get(aux).getRol().getNombre())) {
                     descripcionRol = unRol.getDescripcion();
                 }
-            }
+            }*/
             System.out.println("Descripcion de Rol : " + descripcionRol);
             System.out.println("");
         }
@@ -108,11 +109,20 @@ public class AdmUsuario {
     private Rol rol;
     private String password;
     private String descripcionRol;*/
+        Permisos permisos = new Permisos(true, false, true, true);
+        Rol rol = new Rol(permisos);
         this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "Administrador");
+        permisos = new Permisos(false, true, false, true);
+        rol = new Rol(permisos);
         this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "Supervisor");
+        permisos = new Permisos(false, true, false, true);
+        rol = new Rol(permisos);
         this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "Contador");
+        permisos = new Permisos(false, true, false, true);
+        rol = new Rol(permisos);
         this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "123456", "Arquitecto");
     }
+    
     
     public boolean verificarUsuario(String user) {
         if (user != null) {

@@ -5,8 +5,8 @@ public class Empleado extends Usuario{
     
     private String codigoEmpleado;
 
-    public Empleado(String codigoEmpleado,String dni, String nombre, String apellidoPaterno,String apellidoMaterno,String usuario, String correo,String fechaIngreso, String cargo, String nombreRol, String password) {
-            super(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, nombreRol, password);
+    public Empleado(String codigoEmpleado,String dni, String nombre, String apellidoPaterno,String apellidoMaterno,String usuario, String correo,String fechaIngreso, String cargo, Rol rol, String password) {
+            super(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, password);
         
         this.codigoEmpleado = codigoEmpleado;
     }

@@ -2,7 +2,24 @@
 package modelos;
 
 public class Rol {
-    private String nombre;
+    
+    private Permisos permisos;
+
+    public Rol(Permisos permisos) {
+        this.permisos = permisos;
+    }
+
+    public Permisos getPermisos() {
+        return permisos;
+    }
+
+    public void setPermisos(Permisos permisos) {
+        this.permisos = permisos;
+    }
+    
+}
+    
+    /*private String nombre;
     private String descripcion;
 
     public Rol(String nombre, String descripcion) {
@@ -16,5 +33,4 @@ public class Rol {
 
     public String getNombre() {
         return nombre;
-    }   
-}
+    }*/
