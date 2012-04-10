@@ -111,16 +111,16 @@ public class AdmUsuario {
     private String descripcionRol;*/
         Permisos permisos = new Permisos(true, false, true, true);
         Rol rol = new Rol(permisos);
-        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", "Administrador", "Administrador");
+        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "MiCargo", rol, "Administrador");
         permisos = new Permisos(false, true, false, true);
         rol = new Rol(permisos);
-        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", "Supervisor", "Supervisor");
+        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "MiCargo", rol, "Supervisor");
         permisos = new Permisos(false, true, false, true);
         rol = new Rol(permisos);
-        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", "Contador", "Contador");
+        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "MiCargo", rol, "Contador");
         permisos = new Permisos(false, true, false, true);
         rol = new Rol(permisos);
-        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "123456", "Arquitecto");
+        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", rol, "Arquitecto");
     }
     
     
