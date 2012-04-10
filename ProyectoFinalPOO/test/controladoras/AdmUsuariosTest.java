@@ -7,6 +7,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
+import modelos.Permisos;
+import modelos.Rol;
 
 public class AdmUsuariosTest {
     
@@ -74,7 +76,10 @@ public class AdmUsuariosTest {
      @Test
         
     public void eliminarUsuario(){
-     admUsuarios.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", "123456", "Arquitecto");
+         
+         Permisos permisos = new Permisos(true, true, true, true);
+         Rol newRol= new Rol(permisos);
+     admUsuarios.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", newRol, "Arquitecto");
            assertEquals(4 ,admUsuarios.getValores().size()); 
         System.out.println("El usuario ha sido eliminado");
 
