@@ -4,6 +4,8 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hammer
@@ -15,8 +17,13 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         initComponents();
+        dialogo.setSize(570, 310);
+        dialogo.setLocationRelativeTo(this);
+        dialogo.setTitle("Inicio de Sesión");
+        dialogo.setVisible(true);
+        
     }
-
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,76 +33,139 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLogin = new javax.swing.JLabel();
+        dialogo = new javax.swing.JDialog();
         lblUsuario = new javax.swing.JLabel();
-        lblContrasenha = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
-        txtContrasenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
+        dialogo.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                dialogoWindowClosing(evt);
+            }
+        });
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblUsuario.setText("Usuario");
+
+        lblPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblPassword.setText("Contraseña");
+
+        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\ProyectoFinal\\POO---RRHH\\ProyectoFinalPOO\\img\\keys.png")); // NOI18N
+
+        javax.swing.GroupLayout dialogoLayout = new javax.swing.GroupLayout(dialogo.getContentPane());
+        dialogo.getContentPane().setLayout(dialogoLayout);
+        dialogoLayout.setHorizontalGroup(
+            dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogoLayout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnIngresar)
+                    .addGroup(dialogoLayout.createSequentialGroup()
+                        .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblUsuario)
+                            .addComponent(lblPassword))
+                        .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dialogoLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogoLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        dialogoLayout.setVerticalGroup(
+            dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogoLayout.createSequentialGroup()
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dialogoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4))
+                    .addGroup(dialogoLayout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUsuario)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPassword)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnIngresar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUsuario.setText("Usuario");
-
-        lblContrasenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblContrasenha.setText("Contrasenha");
-
-        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnIngresar.setText("Ingresar");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\ProyectoFinal\\POO---RRHH\\ProyectoFinalPOO\\img\\keys.png")); // NOI18N
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 328, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 193, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogin)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnIngresar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUsuario)
-                            .addComponent(lblContrasenha))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUsuario)
-                            .addComponent(txtContrasenha, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(38, 38, 38))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblLogin)
-                        .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblUsuario)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblContrasenha)
-                            .addComponent(txtContrasenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIngresar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 17, Short.MAX_VALUE)
-                        .addComponent(jLabel1)))
-                .addContainerGap())
+                .addGap(39, 39, 39)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void dialogoWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_dialogoWindowClosing
+        System.exit(0);
+    }//GEN-LAST:event_dialogoWindowClosing
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        String usuario=txtUsuario.getText();
+        String password=txtPassword.getText();
+            if((usuario.isEmpty())||(password.isEmpty()))
+            {
+                JOptionPane.showMessageDialog(null,"Ingresar un usuario y contraseña",
+                "Error",JOptionPane.ERROR_MESSAGE);
+                
+                /*JOptionPane.showMessageDialog(null, "Ingrese su nombre de usuario y contraseña");*/
+                
+                /*System.out.println("enter the valid username and password");
+                JOptionPane.showMessageDialog(null,"Incorrect login or password",
+                "Error",JOptionPane.ERROR_MESSAGE);*/
+                
+            }
+            else
+            {
+                this.setVisible(true);
+                dialogo.setVisible(false);
+            }
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,17 +204,18 @@ public class LoginForm extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new LoginForm().setVisible(true);
+                new LoginForm().setVisible(false);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblContrasenha;
-    private javax.swing.JLabel lblLogin;
+    private javax.swing.JDialog dialogo;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPasswordField txtContrasenha;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
