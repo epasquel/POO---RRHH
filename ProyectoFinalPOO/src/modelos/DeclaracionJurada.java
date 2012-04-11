@@ -17,7 +17,8 @@ public class DeclaracionJurada extends Documento{
     private String fechaPublicacion;
     private String fechaDocumento;
     private String numDocumento;
-     private String fechaVencimiento;
+    //private String fechaVencimiento;
+     
 private String descripcion;
 
     public String getDescripcion() {
@@ -27,19 +28,21 @@ private String descripcion;
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getFechaVencimiento() {
-        return fechaVencimiento;
-    }
-
-    public void setFechaVencimiento(String fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
-    }
+//    public String getFechaVencimiento() {
+//        return fechaVencimiento;
+//    }
+//
+//    public void setFechaVencimiento(String fechaVencimiento) {
+//        this.fechaVencimiento = fechaVencimiento;
+//    }
 
     
     /*public DeclaracionJurada(String tipo, Calendar fechaVen, String responsable)*/
-    public DeclaracionJurada(String tipo, String fechaVen, Responsable responsable) {
-        super(fechaVen, responsable);
+    public DeclaracionJurada(String tipo, String fechaVen, Responsable responsable) {        
+        //super(fechaVen, responsable);
         this.tipo = tipo;
+        this.fechaven = fechaVen;
+        this.responsable = responsable;
     }    
        
 //    @Override

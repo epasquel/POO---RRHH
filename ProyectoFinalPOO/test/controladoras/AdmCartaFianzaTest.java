@@ -4,11 +4,12 @@
  */
 package controladoras;
 
+import java.util.ArrayList;
 import modelos.CartaFianza;
-import org.junit.AfterClass;
+import modelos.Responsable;
+import modelos.Usuario;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.BeforeClass;
 
 /**
  *
@@ -102,6 +103,88 @@ public class AdmCartaFianzaTest {
         CartaFianza cartaFianza = admCartaFianza.generarData();
         assertTrue(admCartaFianza.verificarCamposObligatoriosParaGrabarTarea(cartaFianza));
         System.out.println("Documento asignado a : " + cartaFianza.getResponsable().getNombre());
+    }
+    
+    //Métodos de las historias de usuarios//
+    
+    @Test
+    public void adicionarCreaNuevoTipoControlCartaFianza(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        assertEquals("Nuevo documento", admCartaFianza.adicionar());
+        System.out.println(admCartaFianza.adicionar());
+    }
+    
+    @Test
+    public void buscarCartaFianzaPorNumeroMeDevuelveUnMensaje(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        //CartaFianza cartaFianza = admCartaFianza.generarData();
+        assertNotNull(admCartaFianza.buscar("CF001"));
+        System.out.println("Se ha encontrado la Carta Fianza " + admCartaFianza.buscar("CF001").getNumDocumento());
+    }
+    
+    @Test
+    public void buscarCartaFianzaPorNumeroParaEditar(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        //CartaFianza cartaFianza = admCartaFianza.generarData();
+        assertNotNull(admCartaFianza.buscar("CF002"));
+        System.out.println("La Carta Fianza " + admCartaFianza.buscar("CF002").getNumDocumento() + " se puede editar");
+    }
+    
+    @Test
+    public void eliminarCartaFianzaPorNumero(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        //CartaFianza cartaFianza = admCartaFianza.generarData();
+        assertNotNull(admCartaFianza.eliminar("CF002"));
+        System.out.println(admCartaFianza.eliminar("CF002"));
+    }  
+    
+    @Test
+    public void asignarTareaMeMuestraSuResponsable(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        CartaFianza cartaFianza = admCartaFianza.generarDataSinResponsable();
+        Responsable responsable = new Responsable("Ebert", "Contador");
+        assertNotNull(admCartaFianza.asignarTarea(cartaFianza, responsable));
+        System.out.println("La Carta Fianza " + cartaFianza.getNumDocumento() + " tiene como responsable a " + cartaFianza.getResponsable().getNombre());
+    }
+    
+    @Test
+    public void mostrarLosUsuatiosANotificar(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        CartaFianza cartaFianza = admCartaFianza.generarData();
+        
+        AdmUsuario admUsuario = new AdmUsuario();
+        ArrayList<Usuario> listUsuarios = new ArrayList<Usuario>();
+        Usuario usuario = admUsuario.existeUsuario("epasquel");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        usuario = admUsuario.existeUsuario("acuru");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        
+        assertNotNull(admCartaFianza.adicionarUsuarioYNotificar(cartaFianza, listUsuarios));
+        System.out.println("Los usuarios asignados son " + admCartaFianza.adicionarUsuarioYNotificar(cartaFianza, listUsuarios));
+    }
+    
+    @Test
+    public void mostrarUsuariosEliminadosDeLasNotificaciones(){
+        AdmCartaFianza admCartaFianza = new AdmCartaFianza();
+        CartaFianza cartaFianza = admCartaFianza.generarDataConUsuariosAsignados();
+        
+        AdmUsuario admUsuario = new AdmUsuario();
+        ArrayList<Usuario> listUsuarios = new ArrayList<Usuario>();
+        Usuario usuario = admUsuario.existeUsuario("sklante");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        usuario = admUsuario.existeUsuario("crengifo");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        
+        assertNotNull(admCartaFianza.eliminarUsuarioYNotificar(cartaFianza, listUsuarios));
+        System.out.println("Los usuarios eliminados son " + admCartaFianza.adicionarUsuarioYNotificar(cartaFianza, listUsuarios));
     }
     
 }

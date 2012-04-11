@@ -9,7 +9,9 @@ public class TareaGeneral extends Documento {
 
     /*public TareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven)*/
     public TareaGeneral(String asunto, Responsable responsable, String comentario, String fechaven) {
-        super(fechaven, responsable);
+        //super(fechaven, responsable);
+        this.fechaven = fechaven;
+        this.responsable = responsable;
         this.asunto = asunto;
     }
 

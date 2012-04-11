@@ -1,13 +1,15 @@
 
 package modelos;
 
+import appinterfaces.IDocumento;
 import java.util.ArrayList;
 /*import java.util.Calendar;*/
 
 
-public class Documento {
-    
+public abstract class Documento{
+        
     /*protected Calendar fechaven;*/
+    protected String numDocumento;
     protected String fechaven;
     protected Responsable responsable;
     protected String comentario;
@@ -19,12 +21,19 @@ public class Documento {
     protected String usuActualizacion;
 
     /*public Documento(Calendar fechaven, String responsable)*/
-    public Documento(String fechaven, Responsable responsable) {
-        this.fechaven = fechaven;
-        this.responsable = responsable; 
-        listUsuario = new ArrayList<Usuario>();
-    }        
+//    public Documento(String fechaven, Responsable responsable) {
+//        this.fechaven = fechaven;
+//        this.responsable = responsable; 
+//        listUsuario = new ArrayList<Usuario>();
+//    }        
+    public String getNumDocumento() {
+        return numDocumento;
+    }
 
+    public void setNumDocumento(String numDocumento) {
+        this.numDocumento = numDocumento;
+    }
+    
     public String getComentario() {
         return comentario;
     }

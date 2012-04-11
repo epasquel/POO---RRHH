@@ -1,40 +1,199 @@
 
 package controladoras;
 
+import appinterfaces.IDocumento;
+import java.util.ArrayList;
 import java.util.Calendar;
 import modelos.*;
 
-public class AdmCartaFianza {
-    
-    public CartaFianza generarData(){
+public class AdmCartaFianza extends AdmDocumentos{
+
+    @Override
+    public String adicionar() {       
+        return "Nuevo documento";
+    }
+
+    @Override
+    public String adicionarUsuarioYNotificar(Documento documento, ArrayList<Usuario> listaUsuarios) {
+        String usuariosAsignados = "";
+        documento.setListUsuario(listaUsuarios);
+        for (Usuario usuario : documento.getListUsuario()){
+            usuariosAsignados = usuariosAsignados + ((usuariosAsignados.equals("")) ? "" : ",") + usuario.getNombre();
+        }
+        return usuariosAsignados;
+    }
+
+    @Override
+    public Documento asignarTarea(Documento documento, Responsable responsable) {
+        if (responsable != null){
+            documento.setResponsable(responsable);
+        }
+      return documento;
+    }
+
+    @Override
+    public Documento buscar(String numDocumento) {
+        ArrayList<CartaFianza> listaCartaFianza = simularTabla();
+        CartaFianza objCarta = null;
+        for (CartaFianza cartaFianza: listaCartaFianza){
+            if(cartaFianza.getNumDocumento().equals(numDocumento)){                
+                objCarta = cartaFianza;
+            }
+        }
+        return objCarta;
+    }
+
+    @Override
+    public Documento editar(String numDocumento) {
+        ArrayList<CartaFianza> listaCartaFianza = simularTabla();
+        CartaFianza objCarta = null;
+        for (CartaFianza cartaFianza: listaCartaFianza){
+            if(cartaFianza.getNumDocumento().equals(numDocumento)){ 
+                if (cartaFianza.getResponsable() == null){
+                    objCarta = cartaFianza;
+                }
+            }
+        }
+        return objCarta;
+    }
+
+    @Override
+    public String eliminar(String numDocumento) {
+        String mensaje = "";
+        ArrayList<CartaFianza> listaCartaFianza = simularTabla();        
+        for (CartaFianza cartaFianza: listaCartaFianza){
+            if(cartaFianza.getNumDocumento().equals(numDocumento)){                 
+                mensaje = "Se ha eliminado la Carta Fianza " + cartaFianza.getNumDocumento();
+            }
+        }
+        return mensaje;
+    }
+
+    @Override
+    public String eliminarUsuarioYNotificar(Documento documento, ArrayList<Usuario> listaUsuarios) {
+        String usuariosEliminados = "";
+        //documento.setListUsuario(listaUsuarios);
+        for (Usuario usuario : documento.getListUsuario()){
+            usuariosEliminados = usuariosEliminados + ((usuariosEliminados == "") ? "" : ",") + usuario.getNombre();
+        }        
         
-        String numDocumento = "CF001";
-        String numContrato = "21245";
-        Banco bancoEmisor = new Banco("Banco de Crédito");
-        String tipo = "Inicio";
-        Proveedor proveedor = new Proveedor("ABC");
-        String numProceso = "";
-        double importe = 120.00;
+        documento.getListUsuario().removeAll(listaUsuarios);            
+        return usuariosEliminados;
+    }
+
+   public ArrayList<CartaFianza> simularTabla(){
+   
+       ArrayList<CartaFianza> listCartaFianza = new ArrayList<CartaFianza>();
+
         Calendar miCalendar = Calendar.getInstance();
         int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
         int mes = miCalendar.get(Calendar.MONTH);
         int año = miCalendar.get(Calendar.YEAR);
         String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
-        Responsable responsable = new Responsable("Ebert", "Contador");
-        String comentario = "Comentario de prueba";
                 
-        CartaFianza objCarta = new CartaFianza(numDocumento, proveedor);
-        
-        objCarta.setNumDocumento(numDocumento);
-        objCarta.setNumContrato(numContrato);
-        objCarta.setBancoEmisor(bancoEmisor);
-        objCarta.setTipo(tipo);
-        objCarta.setProveedor(proveedor);
-        objCarta.setNumProcesoSel(numProceso);
-        objCarta.setImporte(importe);
+        CartaFianza objCarta = new CartaFianza("CF001", new Proveedor("ABC"));
+        objCarta.setNumContrato("21245");
+        objCarta.setBancoEmisor(new Banco("Banco de Crédito"));
+        objCarta.setTipo("Inicio");
+        objCarta.setNumProcesoSel("5646543");
+        objCarta.setImporte(120.00);
         objCarta.setFechaven(fechaVencimiento);
-        objCarta.setResponsable(responsable);
-        objCarta.setComentario(comentario);
+        objCarta.setResponsable(new Responsable("Ebert", "Contador"));
+        objCarta.setComentario("Comentario de prueba");
+        listCartaFianza.add(objCarta);
+        
+        objCarta = new CartaFianza("CF002", new Proveedor("XYZ"));
+        objCarta.setNumContrato("21245");
+        objCarta.setBancoEmisor(new Banco("Banco Financiero"));
+        objCarta.setTipo("Inicio");
+        objCarta.setNumProcesoSel("5434334");
+        objCarta.setImporte(310.00);
+        objCarta.setFechaven(fechaVencimiento);
+        objCarta.setResponsable(null);
+        objCarta.setComentario("Comentario de prueba");
+        listCartaFianza.add(objCarta);        
+       
+        return listCartaFianza;
+   }
+    
+    public CartaFianza generarData(){
+        
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+                
+        CartaFianza objCarta = new CartaFianza("CF001", new Proveedor("ABC"));
+        objCarta.setNumContrato("21245");
+        objCarta.setBancoEmisor(new Banco("Banco de Crédito"));
+        objCarta.setTipo("Inicio");
+        objCarta.setProveedor(new Proveedor("ABC"));
+        objCarta.setNumProcesoSel("36423673");
+        objCarta.setImporte(120.00);
+        objCarta.setFechaven(fechaVencimiento);
+        objCarta.setResponsable(new Responsable("Ebert", "Contador"));
+        objCarta.setComentario("Comentario de prueba");
+        
+        return objCarta;
+    }
+    
+    
+    public CartaFianza generarDataConUsuariosAsignados(){
+        
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+                
+        CartaFianza objCarta = new CartaFianza("CF001", new Proveedor("ABC"));
+        objCarta.setNumContrato("21245");
+        objCarta.setBancoEmisor(new Banco("Banco de Crédito"));
+        objCarta.setTipo("Inicio");
+        objCarta.setProveedor(new Proveedor("ABC"));
+        objCarta.setNumProcesoSel("36423673");
+        objCarta.setImporte(120.00);
+        objCarta.setFechaven(fechaVencimiento);
+        objCarta.setResponsable(new Responsable("Ebert", "Contador"));
+        objCarta.setComentario("Comentario de prueba");
+        
+        AdmUsuario admUsuario = new AdmUsuario();
+        ArrayList<Usuario> listUsuarios = new ArrayList<Usuario>();
+        Usuario usuario = admUsuario.existeUsuario("sklante");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        usuario = admUsuario.existeUsuario("acuru");
+        if (usuario != null){
+        listUsuarios.add(usuario);
+        }
+        
+        objCarta.setListUsuario(listUsuarios);
+        
+        return objCarta;
+    }
+    
+  
+    
+    public CartaFianza generarDataSinResponsable(){
+        
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+                
+        CartaFianza objCarta = new CartaFianza("CF001", new Proveedor("ABC"));
+        objCarta.setNumContrato("21245");
+        objCarta.setBancoEmisor(new Banco("Banco de Crédito"));
+        objCarta.setTipo("Inicio");
+        objCarta.setProveedor(new Proveedor("ABC"));
+        objCarta.setNumProcesoSel("36423673");
+        objCarta.setImporte(120.00);
+        objCarta.setFechaven(fechaVencimiento);
+        //objCarta.setResponsable(new Responsable("Ebert", "Contador"));
+        objCarta.setComentario("Comentario de prueba");
         
         return objCarta;
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /*import java.util.Calendar;*/
 
 
-public class CartaFianza {
+public class CartaFianza extends Documento{
 
     public CartaFianza(String numDocumento, Proveedor proveedor){
         this.numDocumento = numDocumento;
@@ -13,7 +13,7 @@ public class CartaFianza {
         this.importe = 0.00;
     }
     
-    private String numDocumento;
+    
     private String tipo;
     private String numContrato;
     private Banco bancoEmisor;
@@ -21,71 +21,71 @@ public class CartaFianza {
     private String numProcesoSel;
     private double importe;
     
-    protected Responsable responsable;
-    protected String comentario;
-    protected ArrayList<Usuario> listUsuario;
-    protected String fechaCreacion;
-    protected String usuCreacion;
-    protected String fecActualizacion;
-    protected String usuActualizacion;
-    
-    protected String fechaven;
-
-    public String getFecActualizacion() {
-        return fecActualizacion;
-    }
-
-    public void setFecActualizacion(String fecActualizacion) {
-        this.fecActualizacion = fecActualizacion;
-    }
-
-    public String getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(String fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public String getFechaven() {
-        return fechaven;
-    }
-
-    public void setFechaven(String fechaven) {
-        this.fechaven = fechaven;
-    }
-
-    public ArrayList<Usuario> getListUsuario() {
-        return listUsuario;
-    }
-
-    public void setListUsuario(ArrayList<Usuario> listUsuario) {
-        this.listUsuario = listUsuario;
-    }
-
-    public Responsable getResponsable() {
-        return responsable;
-    }
-
-    public void setResponsable(Responsable responsable) {
-        this.responsable = responsable;
-    }
-
-    public String getUsuActualizacion() {
-        return usuActualizacion;
-    }
-
-    public void setUsuActualizacion(String usuActualizacion) {
-        this.usuActualizacion = usuActualizacion;
-    }
-
-    public String getUsuCreacion() {
-        return usuCreacion;
-    }
-
-    public void setUsuCreacion(String usuCreacion) {
-        this.usuCreacion = usuCreacion;
-    }      
+//    protected Responsable responsable;
+//    protected String comentario;
+//    protected ArrayList<Usuario> listUsuario;
+//    protected String fechaCreacion;
+//    protected String usuCreacion;
+//    protected String fecActualizacion;
+//    protected String usuActualizacion;
+//    
+//    protected String fechaven;
+//
+//    public String getFecActualizacion() {
+//        return fecActualizacion;
+//    }
+//
+//    public void setFecActualizacion(String fecActualizacion) {
+//        this.fecActualizacion = fecActualizacion;
+//    }
+//
+//    public String getFechaCreacion() {
+//        return fechaCreacion;
+//    }
+//
+//    public void setFechaCreacion(String fechaCreacion) {
+//        this.fechaCreacion = fechaCreacion;
+//    }
+//
+//    public String getFechaven() {
+//        return fechaven;
+//    }
+//
+//    public void setFechaven(String fechaven) {
+//        this.fechaven = fechaven;
+//    }
+//
+//    public ArrayList<Usuario> getListUsuario() {
+//        return listUsuario;
+//    }
+//
+//    public void setListUsuario(ArrayList<Usuario> listUsuario) {
+//        this.listUsuario = listUsuario;
+//    }
+//
+//    public Responsable getResponsable() {
+//        return responsable;
+//    }
+//
+//    public void setResponsable(Responsable responsable) {
+//        this.responsable = responsable;
+//    }
+//
+//    public String getUsuActualizacion() {
+//        return usuActualizacion;
+//    }
+//
+//    public void setUsuActualizacion(String usuActualizacion) {
+//        this.usuActualizacion = usuActualizacion;
+//    }
+//
+//    public String getUsuCreacion() {
+//        return usuCreacion;
+//    }
+//
+//    public void setUsuCreacion(String usuCreacion) {
+//        this.usuCreacion = usuCreacion;
+//    }      
 
     public Banco getBancoEmisor() {
         return bancoEmisor;
@@ -109,14 +109,6 @@ public class CartaFianza {
 
     public void setNumContrato(String numContrato) {
         this.numContrato = numContrato;
-    }
-
-    public String getNumDocumento() {
-        return numDocumento;
-    }
-
-    public void setNumDocumento(String numDocumento) {
-        this.numDocumento = numDocumento;
     }
 
     public String getNumProcesoSel() {
@@ -143,13 +135,13 @@ public class CartaFianza {
         this.tipo = tipo;
     }
 
-    public String getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
+//    public String getComentario() {
+//        return comentario;
+//    }
+//
+//    public void setComentario(String comentario) {
+//        this.comentario = comentario;
+//    }
 
     
     
