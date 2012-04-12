@@ -2,20 +2,49 @@
 package controladoras;
 
 import java.util.ArrayList;
+import modelos.Modulo;
 import modelos.Permisos;
 import modelos.Rol;
 
 public class AdmRol {
     
-    ArrayList<Rol> listRoles;
     
-    private void simularTablaRoles()        
+    
+    public ArrayList<Rol> simularTablaRoles()        
     {
-        listRoles = new ArrayList<Rol>();
-        Permisos permisos = new Permisos(true, false, true, true);
-        Rol rol = new Rol(permisos);
+        ArrayList<Rol> listRoles = new ArrayList<Rol>();
+        Modulo modulo = new Modulo("M001", "Administracion de Usuarios");
+        Permisos permisos = new Permisos(modulo, true, true, true, true);
+        Rol rol = new Rol(permisos,"Administrador", "Administrador");
         listRoles.add(rol);
         
+        modulo = new Modulo("M002", "Control Declaracio Jurada");
+        permisos = new Permisos(modulo, true, true, true, false);
+        rol = new Rol(permisos, "Empleado", "Empleado");
+        listRoles.add(rol);
+        
+        return listRoles;
+        
+    }
+    
+    
+    public Rol Adicionar() {
+        Modulo modulo = new Modulo("M001", "Administracion de Usuarios");
+        Permisos permisos = new Permisos(modulo, true, true, true, true);
+        Rol rol = new Rol(permisos,"Administrador", "Administrador");
+        return rol;
+    }
+    
+    public Rol buscarRol(String nombre){
+        Rol rol= null;
+        ArrayList<Rol> listaRol = simularTablaRoles();
+        
+        for (Rol rol2 : listaRol){
+            if(rol2.getNombre().equals(nombre)){
+                rol = rol2;
+            }
+        }
+        return rol;
     }
     
 }

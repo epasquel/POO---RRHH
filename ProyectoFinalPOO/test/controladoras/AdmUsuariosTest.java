@@ -7,6 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
+import modelos.Modulo;
 import modelos.Permisos;
 import modelos.Rol;
 
@@ -77,8 +78,8 @@ public class AdmUsuariosTest {
         
     public void eliminarUsuario(){
          
-         Permisos permisos = new Permisos(true, true, true, true);
-         Rol newRol= new Rol(permisos);
+         Permisos permisos = new Permisos(new Modulo("M001", "Administracion de Usuarios"),true, true, true, true);
+         Rol newRol= new Rol(permisos,"", "");
      admUsuarios.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "MiCargo", newRol, "Arquitecto");
            assertEquals(4 ,admUsuarios.getValores().size()); 
         System.out.println("El usuario ha sido eliminado");

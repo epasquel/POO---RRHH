@@ -8,6 +8,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.text.ParseException;
 import controladoras.AdmUsuario;
+import modelos.Modulo;
 import modelos.Permisos;
 
 public class AdmUsuario {
@@ -97,6 +98,18 @@ public class AdmUsuario {
         }
     }
     
+    private Rol buscarRol(String codigo, ArrayList<Rol> listaRol){
+        Rol rol= null;
+        for (Rol rol2 : listaRol){
+            if(rol2.getNombre().equals(codigo)){
+                rol = rol2;
+            }
+        }
+        
+        return rol;
+        
+    }
+    
     public void simularTabla(){
          /*  private String dni;
     private String nombre;
@@ -109,18 +122,16 @@ public class AdmUsuario {
     private Rol rol;
     private String password;
     private String descripcionRol;*/
-        Permisos permisos = new Permisos(true, false, true, true);
-        Rol rol = new Rol(permisos);
-        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "Administrador", rol, "656485");
-        permisos = new Permisos(false, true, false, true);
-        rol = new Rol(permisos);
-        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "Supervisor", rol, "213546");
-        permisos = new Permisos(false, true, false, true);
-        rol = new Rol(permisos);
-        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "Contador", rol, "654311");
-        permisos = new Permisos(false, true, false, true);
-        rol = new Rol(permisos);
-        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "Arquitecto", rol, "123456");
+        AdmRol admRol = new AdmRol();
+        
+        Rol rol1 = buscarRol("", admRol.simularTablaRoles());
+        this.registrarUsuario("44623909", "Agustin", "Curu", "Hinostroza", "acuru", "acuruh@hotmail.com", "01/04/2012", "Administrador", rol1, "656485");
+        Rol rol2 = buscarRol("", admRol.simularTablaRoles());
+        this.registrarUsuario("44623910", "Ebert", "Pasquel", "Paucar", "epasquel", "epasquel@hotmail.com", "01/04/2012", "Supervisor", rol2, "213546");
+        Rol rol3 = buscarRol("", admRol.simularTablaRoles());
+        this.registrarUsuario("44623911", "Carlos", "Rengifo", "Florindez", "crengifo", "crengifo@hotmail.com", "01/04/2012", "Contador", rol3, "654311");
+        Rol rol4 = buscarRol("", admRol.simularTablaRoles());
+        this.registrarUsuario("44623912", "Miguel", "Peñaran", "Escalante", "sklante", "mpeñaran@hotmail.com", "01/04/2012", "Arquitecto", rol4, "123456");
     }
     
     

@@ -6,12 +6,22 @@ public class Permisos {
     private boolean Adicionar;
     private boolean Editar;
     private boolean Eliminar;
+    private Modulo modulo;
 
-    public Permisos(boolean Acceso, boolean Adicionar, boolean Editar, boolean Eliminar) {
+    public Permisos(Modulo modulo, boolean Acceso, boolean Adicionar, boolean Editar, boolean Eliminar) {
+        this.modulo = modulo;
         this.Acceso = Acceso;
         this.Adicionar = Adicionar;
         this.Editar = Editar;
         this.Eliminar = Eliminar;
+    }
+
+    public Modulo getModulo() {
+        return modulo;
+    }
+
+    public void setModulo(Modulo modulo) {
+        this.modulo = modulo;
     }
 
     public boolean isAcceso() {
