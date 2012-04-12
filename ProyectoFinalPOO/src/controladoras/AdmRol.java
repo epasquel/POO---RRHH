@@ -18,10 +18,22 @@ public class AdmRol {
         Rol rol = new Rol(permisos,"Administrador", "Administrador");
         listRoles.add(rol);
         
-        modulo = new Modulo("M002", "Control Declaracio Jurada");
+        modulo = new Modulo("M002", "Control de Declaracion Jurada");
         permisos = new Permisos(modulo, true, true, true, false);
-        rol = new Rol(permisos, "Empleado", "Empleado");
+        rol = new Rol(permisos, "UsuarioRRHH", "Usuario de RRHH");
         listRoles.add(rol);
+        
+        modulo = new Modulo("M003", "Control de Carta Fianza");
+        permisos = new Permisos(modulo, true, true, true, false);
+        rol = new Rol(permisos, "UsuarioLogistica", "Usuario de Logística");
+        listRoles.add(rol);
+        
+        modulo = new Modulo("M004", "Control de Tarea General");
+        permisos = new Permisos(modulo, true, true, true, false);
+        rol = new Rol(permisos, "Empleado", "Empleado de servir");
+        listRoles.add(rol);
+        
+       
         
         return listRoles;
         
@@ -47,6 +59,22 @@ public class AdmRol {
         return rol;
     }
     
+     public String Eliminar(String nombre) {
+        Rol rol= null;
+        ArrayList<Rol> listaRol = simularTablaRoles();
+        String mensaje = ""; 
+        for (Rol rol2 : listaRol){
+            if(rol2.getNombre().equals(nombre)){
+                rol = rol2;
+                mensaje = rol.getNombre();
+            }
+        }
+        listaRol.remove(rol);
+        
+        return "Se ha eliminado el rol" + mensaje;
+    }
+    
+    /*en el assert not null*/
 }
 
 
