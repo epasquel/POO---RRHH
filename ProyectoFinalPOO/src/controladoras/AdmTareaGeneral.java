@@ -1,128 +1,226 @@
-
 package controladoras;
 
-import java.util.ArrayList;
-import modelos.Responsable;
 /*import java.util.Calendar;*/
-import modelos.TareaGeneral;
-import modelos.Usuario;
+import java.util.ArrayList;
+import java.util.Calendar;
+import modelos.*;
 
-public class AdmTareaGeneral {
+public class AdmTareaGeneral extends AdmDocumentos{
 
-    private static ArrayList<TareaGeneral> valores = new ArrayList<TareaGeneral>();
-
-    public static ArrayList<TareaGeneral> getArrayTareaGeneral() {
-        return valores;
+    @Override
+    public String adicionar() {
+        return "Nuevo documento";
     }
 
-    public ArrayList<TareaGeneral> getValores() {
-        return valores;
+    @Override
+    public String adicionarUsuarioYNotificar(Documento documento, ArrayList<Usuario> listaUsuarios) {
+        String usuariosAsignados = "";
+        documento.setListUsuario(listaUsuarios);
+        for (Usuario usuario : documento.getListUsuario()){
+            usuariosAsignados = usuariosAsignados + ((usuariosAsignados == "") ? "" : ",") + usuario.getNombre();
+        }
+        return usuariosAsignados;
     }
 
-    public int getCantidadValores() {
-        return valores.size();
+    @Override
+    public Documento asignarTarea(Documento documento, Responsable responsable) {
+        if (responsable != null){
+            documento.setResponsable(responsable);
+        }
+      return documento;
     }
 
-    /*public void registrarTareaGeneral(String asunto, String responsable, String comentario, Calendar fechaven)*/
-    public void registrarTareaGeneral(String asunto, Responsable responsable, String comentario, String fechaven) {
-        int estado = 0;
-        int usuario = 0;
-        for (TareaGeneral TareaGeneral : valores) {
-            if (TareaGeneral.getAsunto().equals(asunto)) {
-                estado = 1;
+    @Override
+    public Documento buscar(String numDocumento) {
+        ArrayList<TareaGeneral> listaTareaGeneral = simularTabla();
+        TareaGeneral objTareaGeneral = null;
+        for (TareaGeneral tareaGeneral: listaTareaGeneral){
+            if(tareaGeneral.getNumDocumento().equals(numDocumento)){                
+                objTareaGeneral = tareaGeneral;
             }
         }
-        for (Usuario Usuario : AdmUsuario.getArrayUsuario()) {
-            if (Usuario.getDni().equals(responsable)) {
-                usuario = 1;
-            }
-        }
-        if (estado == 0 && usuario == 1) {
-            TareaGeneral objDato = new TareaGeneral(asunto, responsable, comentario, fechaven);
-            valores.add(objDato);
-            System.out.println("La tarea general ha sido registrada satisfactoriamente.");
-        } else if (estado == 1) {
-            System.out.println("La tarea general ingresada ya existe, por favor verifique.");
-        } else if (usuario == 0) {
-            System.out.println("El usuario responsable no existe, por favor verifique.");
-        }
+        return objTareaGeneral;
     }
 
-    public void eliminarTareaGeneral(String asunto) {
-        for (int i = 0; i < this.valores.size(); i++) {
-            String condicion = valores.get(i).getAsunto();
-            if (asunto.equals(condicion)) {
-                valores.remove(i);
-                System.out.println("[" + asunto + "] Registro eliminado.");
-            }
-        }
-    }
-
-    public void buscarTareaGeneral(String asunto) {
-        for (int i = 0; i < this.valores.size(); i++) {
-            String condicion = valores.get(i).getAsunto();
-            if (asunto.equals(condicion)) {
-                System.out.println("[" + asunto + "] Registro buscado.");
-                System.out.println("Asunto: " + valores.get(i).getAsunto());
-                System.out.println("Responsable: " + valores.get(i).getResponsable());
-                System.out.println("[" + asunto + "] Registro encontrado.");
-            }
-        }
-    }
-
-    public void listarTareasGenerales() {
-        int cantidadElementos = valores.size();
-        String nombreResponsable = "";
-        String paternoResponsable = "";
-        String maternoResponsable = "";
-        String completoResponsable = "";
-        for (int aux = 0; aux < cantidadElementos; aux++) {
-            System.out.println("Asunto : " + valores.get(aux).getAsunto());
-            System.out.println("Fecha de Vencimiento : " + valores.get(aux).getFechaven());
-            System.out.println("Comentario : " + valores.get(aux).getComentario());
-            System.out.println("Responsable Dni : " + valores.get(aux).getResponsable());
-            // Importante para relacionar Responsable Dni y su Responsable Nombre Completo ///////////////
-            for (Usuario unUsuario : AdmUsuario.getArrayUsuario()) {
-                if (unUsuario.getDni().equals(valores.get(aux).getResponsable())) {
-                    nombreResponsable = unUsuario.getNombre();
-                    paternoResponsable = unUsuario.getApellidoPaterno();
-                    maternoResponsable = unUsuario.getApellidoMaterno();
-                    completoResponsable = nombreResponsable + " " + paternoResponsable + " " + maternoResponsable;
+    @Override
+    public Documento editar(String numDocumento) {
+        ArrayList<TareaGeneral> listaTareaGeneral = simularTabla();
+        TareaGeneral objTareaGeneral = null;
+        for (TareaGeneral tareaGeneral: listaTareaGeneral){
+            if(tareaGeneral.getNumDocumento().equals(numDocumento)){ 
+                if (tareaGeneral.getResponsable() == null){
+                    objTareaGeneral = tareaGeneral;
                 }
             }
-            System.out.println("Responsable Nombre : " + completoResponsable);
-            System.out.println("");
         }
+        return objTareaGeneral;
     }
-    private void simularTabla() {
-        Responsable responsable1 = new Responsable("Javier", "Conserje");
-        Responsable responsable2 = new Responsable("Javier", "Supervisor");
-        Responsable responsable3 = new Responsable("Javier", "Supervisor");
-        Responsable responsable4 = new Responsable("Javier", "Asesor");
-        this.registrarTareaGeneral("Limpieza", responsable1, "Limpieza en el segmento A", "13/04/2012");
-        this.registrarTareaGeneral("Supervisor", responsable2, "Supervision de calles", "26/04/2012");
-        this.registrarTareaGeneral("Dictar clases", responsable3, "Atencion en el aula 302", "30/04/2012");
-        this.registrarTareaGeneral("Tutoria", responsable4, "Aseoria para alumnos de pregrado", "10/05/2012");
+
+    @Override
+    public String eliminar(String numDocumento) {
+        String mensaje = "";
+       ArrayList<TareaGeneral> listaTareaGeneral = simularTabla();     
+        for (TareaGeneral tareaGeneral: listaTareaGeneral){
+            if(tareaGeneral.getNumDocumento().equals(numDocumento)){                 
+                mensaje = "Se ha eliminado la Tarea General " + tareaGeneral.getNumDocumento();
+            }
+        }
+        return mensaje;
+    }
+
+    @Override
+    public String eliminarUsuarioYNotificar(Documento documento, ArrayList<Usuario> listaUsuarios) {
+        String usuariosEliminados = "";
+        //documento.setListUsuario(listaUsuarios);
+        for (Usuario usuario : documento.getListUsuario()){
+            usuariosEliminados = usuariosEliminados + ((usuariosEliminados == "") ? "" : ",") + usuario.getNombre();
+        }        
+        
+        documento.getListUsuario().removeAll(listaUsuarios);            
+        return usuariosEliminados;
+    }
+
+    
+    public ArrayList<TareaGeneral> simularTabla(){
+   
+       ArrayList<TareaGeneral> listTareaGeneral = new ArrayList<TareaGeneral>();
+
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+                
+        TareaGeneral objTareaGeneral = new TareaGeneral("Primera tarea",fechaVencimiento, new Responsable("Agustin", "Contador"));
+        objTareaGeneral.setNumDocumento("T001");
+        objTareaGeneral.setComentario("Comentario Tarea General de prueba");
+        listTareaGeneral.add(objTareaGeneral);
+        
+        objTareaGeneral = new TareaGeneral("Segunda tarea",fechaVencimiento, new Responsable("Miguel", "Contador"));
+        objTareaGeneral.setNumDocumento("T002");
+        objTareaGeneral.setComentario("Comentario de prueba");        
+        listTareaGeneral.add(objTareaGeneral);        
+       
+        return listTareaGeneral;
+   }
+    
+   
+    public TareaGeneral generarData(){
+        
+        Responsable responsable = new Responsable("Agustin", "Administrador");
+        String asunto = "Asunto Tarea General";
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;
+        
+        TareaGeneral objTarea = new TareaGeneral(asunto, fechaVencimiento, responsable);
+        
+        String comentario = "Comentario de prueba";
+        String numDocumento = "T003";
+        
+        objTarea.setNumDocumento(numDocumento);
+        objTarea.setComentario(comentario);
+        
+        return objTarea;
     }
     
-    public boolean verificarAsunto(String asunto) {
-        if (asunto!=null) {
-            return true;
+    /////////////////////////////////////////////////////////
+    
+    public TareaGeneral generarDataConUsuariosAsignados(){
+        
+        Responsable responsable = new Responsable("Agustin", "Administrador");
+        String asunto = "Asunto Tareas Generales";
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;  
+        
+        TareaGeneral objTarea = new TareaGeneral(asunto, fechaVencimiento, responsable);
+        
+        String numDocumento = "T004";
+        String comentario = "Comentario de prueba";
+        objTarea.setNumDocumento(numDocumento);
+        objTarea.setComentario(comentario);           
+        
+        AdmUsuario admUsuario = new AdmUsuario();
+        ArrayList<Usuario> listUsuarios = new ArrayList<Usuario>();
+        Usuario usuario = admUsuario.existeUsuario("epasquel");
+        if (usuario != null){
+        listUsuarios.add(usuario);
         }
-        return false;
-    }
-
-    public boolean verificarFechaVencimiento(String fechaVencimiento) {
-        if (fechaVencimiento!=null) {
-            return true;
+        usuario = admUsuario.existeUsuario("crengifo");
+        if (usuario != null){
+        listUsuarios.add(usuario);
         }
-        return false;
-    }
-
-    public boolean verificarResponsable(String responsable) {
-        if (responsable!=null) {
-            return true;
+        objTarea.setListUsuario(listUsuarios);
+        
+        return objTarea;
+    }    
+    
+    public TareaGeneral generarDataSinResponsable(){
+        
+        //Responsable responsable = new Responsable("Ebert", "Administrador");
+        String asunto = "Nueva tarea general";
+        Calendar miCalendar = Calendar.getInstance();
+        int diaHoy = miCalendar.get(Calendar.DAY_OF_MONTH);
+        int mes = miCalendar.get(Calendar.MONTH);
+        int año = miCalendar.get(Calendar.YEAR);
+        String fechaVencimiento = diaHoy + "/" + mes + "/" + año;   
+        
+        TareaGeneral objTarea = new TareaGeneral(asunto, fechaVencimiento, null);
+        
+        String numDocumento = "T005";
+        String comentario = "Comentario de prueba";
+        
+        objTarea.setNumDocumento(numDocumento);
+        objTarea.setComentario(comentario);             
+        
+        return objTarea;
+    }    
+    
+    public Boolean verificarSiTareaGeneralTieneResponsable(TareaGeneral tareaGeneral){
+        Boolean succes = false;
+        if (tareaGeneral.getResponsable() != null){
+            succes = true;
         }
-        return false;
+        return succes;
     }
+    
+    
+    public Boolean verificarSiTareaGeneralTieneAsunto(TareaGeneral tareaGeneral){
+        Boolean succes = false;
+        if (tareaGeneral.getAsunto() != null){
+            succes = true;
+        }
+        return succes;
+    }
+        
+    public Boolean verificarSiTareaGeneralTieneFechaDeVencimiento(TareaGeneral tareaGeneral){
+        Boolean succes = false;
+        if (tareaGeneral.getFechaven() != null){
+            succes = true;
+        }
+        return succes;
+    }
+    
+    public Boolean verificarCamposObligatoriosParaGrabarTarea(TareaGeneral tareaGeneral){
+        Boolean succes = false;
+        if ((verificarSiTareaGeneralTieneFechaDeVencimiento(tareaGeneral) == true) & (verificarSiTareaGeneralTieneResponsable(tareaGeneral) == true) & (verificarSiTareaGeneralTieneAsunto(tareaGeneral) == true)){
+            succes = true;
+        }
+        return succes;
+    }
+    
+    public String verificarListaDeUsuarios(TareaGeneral tareaGeneral){
+        
+        String listaUsuarios = "";
+        for (Usuario usuario: tareaGeneral.getListUsuario()){
+            listaUsuarios = listaUsuarios + ((listaUsuarios == "")? "" : ",") +  usuario.getNombre();
+        }
+        return listaUsuarios;
+    }
+    
 }
