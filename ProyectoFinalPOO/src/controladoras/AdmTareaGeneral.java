@@ -223,4 +223,14 @@ public class AdmTareaGeneral extends AdmDocumentos{
         return listaUsuarios;
     }
     
+    public Boolean verificarCamposObligatoriosParaAsignarLaTarea(TareaGeneral tareaGeneral){
+        Boolean succes = false;
+        if ((verificarSiTareaGeneralTieneAsunto(tareaGeneral) == true) & 
+            (verificarSiTareaGeneralTieneFechaDeVencimiento(tareaGeneral) == true) &
+            (verificarSiTareaGeneralTieneResponsable(tareaGeneral) == true)){
+            succes = true;
+        }
+        return succes;
+    }
+    
 }

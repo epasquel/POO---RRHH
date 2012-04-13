@@ -28,7 +28,7 @@ public class AdmTareaGeneralTest {
     }
     
     @Test
-    public void siTareaGeneralTieneUnTipoDevuelveTrue() {        
+    public void siTareaGeneralTieneUnAsuntoDevuelveTrue() {        
                
         AdmTareaGeneral admTareaGeneral = new AdmTareaGeneral();
         TareaGeneral tareaGeneral = admTareaGeneral.generarData();
@@ -95,7 +95,7 @@ public class AdmTareaGeneralTest {
     //Métodos de las historias de usuarios//
     
     @Test
-    public void adicionarCreaNuevoTipoControlCartaFianza(){
+    public void adicionarCreaNuevoTipoControlTareaGeneral(){
         AdmTareaGeneral admTareaGeneral = new AdmTareaGeneral();
         assertEquals("Nuevo documento", admTareaGeneral.adicionar());
         System.out.println(admTareaGeneral.adicionar());
@@ -173,4 +173,5 @@ public class AdmTareaGeneralTest {
         assertNotNull(admTareaGeneral.eliminarUsuarioYNotificar(tareaGeneral, listUsuarios));
         System.out.println("Los usuarios eliminados son " + admTareaGeneral.adicionarUsuarioYNotificar(tareaGeneral, listUsuarios));
     }
+    
 }
